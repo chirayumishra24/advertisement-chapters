@@ -877,7 +877,8 @@
     /* Section title (comic) */
     .section-title, .section-title span {
         font-size: 2.2rem !important;
-        -webkit-text-stroke: 1px #000 !important;
+        color: white !important;
+        -webkit-text-stroke: 1.5px #000 !important;
         letter-spacing: 1px !important;
         line-height: 1.2 !important;
         white-space: normal !important;
@@ -1041,7 +1042,8 @@
     /* Section title (comic) */
     .section-title, .section-title span {
         font-size: 1.6rem !important;
-        -webkit-text-stroke: 0.5px #000 !important;
+        color: white !important;
+        -webkit-text-stroke: 1px #000 !important;
         letter-spacing: 1px !important;
         line-height: 1.2 !important;
         white-space: normal !important;
