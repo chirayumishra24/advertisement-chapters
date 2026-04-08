@@ -875,9 +875,12 @@
     }
 
     /* Section title (comic) */
-    .section-title {
-        font-size: 2.5rem !important;
-        -webkit-text-stroke: 3px #000 !important;
+    .section-title, .section-title span {
+        font-size: 2.2rem !important;
+        -webkit-text-stroke: 1px #000 !important;
+        letter-spacing: 1px !important;
+        line-height: 1.2 !important;
+        white-space: normal !important;
     }
 
     /* Blueprint card */
@@ -1036,9 +1039,15 @@
     }
 
     /* Section title (comic) */
+    .section-title, .section-title span {
+        font-size: 1.6rem !important;
+        -webkit-text-stroke: 0.5px #000 !important;
+        letter-spacing: 1px !important;
+        line-height: 1.2 !important;
+        white-space: normal !important;
+    }
+    
     .section-title {
-        font-size: 1.8rem !important;
-        -webkit-text-stroke: 2px #000 !important;
         margin: 1.5rem 0 1rem !important;
     }
 
