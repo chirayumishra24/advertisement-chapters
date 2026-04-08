@@ -1,0 +1,730 @@
+<div>
+    <div>
+        <div>
+            <div>
+                <div>
+                    <div>
+                        <div>
+                            <div>
+                                <meta charset="UTF-8">
+                                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<title></title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400&amp;family=Inter:wght@300;400;500;600;700&amp;family=Poppins:wght@500;700&amp;display=swap"
+    rel="stylesheet" />
+<link rel="stylesheet" href="responsive.css" />
+<style type="text/css">
+    :root {
+        --feed-gold: #c9a96e;
+        --feed-coral: #c0266f;
+        --feed-navy: #0f172a;
+        --feed-ivory: #fdfbf7;
+        --feed-gray: #475569;
+        --feed-border: #d4af37;
+    }
+
+    body {
+        font-family: 'Inter', sans-serif;
+        background: linear-gradient(to bottom, #fdfbf7, #f8f1e9);
+        color: var(--feed-navy);
+        margin: 0;
+        padding: 0;
+        line-height: 1.75;
+        font-size: 18px !important;
+    }
+
+    .feed-container {
+        max-width: 1450px;
+        margin: 0 auto;
+        padding: 4rem 3rem 6rem;
+        background: var(--feed-ivory);
+        box-shadow: 0 20px 80px rgba(0, 0, 0, 0.08);
+    }
+
+    .feed-header {
+        text-align: center;
+        margin-bottom: 5rem;
+        position: relative;
+    }
+
+    .chapter-title {
+        font-family: 'Playfair Display', serif;
+        font-size: 48px !important;
+        font-weight: 900;
+        color: var(--feed-coral);
+        margin: 0 0 0.8rem;
+    }
+
+    .chapter-subtitle {
+        font-size: 2rem;
+        color: var(--feed-navy);
+        font-weight: 600;
+    }
+
+    /* Social Media Post Styles */
+    .social-post {
+        background: white;
+        border-radius: 16px;
+        margin: 3rem 0;
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.07);
+        overflow: hidden;
+        border: 1px solid rgba(201, 169, 110, 0.12);
+    }
+
+    .post-header {
+        display: flex;
+        align-items: center;
+        padding: 1.2rem 1.5rem;
+        background: linear-gradient(to right, #fdfbf7, rgba(201, 169, 110, 0.05));
+        border-bottom: 1px solid rgba(201, 169, 110, 0.15);
+    }
+
+    .post-avatar {
+        width: 48px;
+        height: 48px;
+        border-radius: 999px;
+        background: var(--feed-gold);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Playfair Display', serif;
+        font-size: 1.4rem;
+        font-weight: bold;
+        color: white;
+        margin-right: 1rem;
+        box-shadow: 0 4px 12px rgba(201, 169, 110, 0.3);
+    }
+
+    .post-meta {
+        flex: 1;
+    }
+
+    .post-author {
+        font-weight: 700;
+        font-size: 1.1rem;
+    }
+
+    .post-time {
+        font-size: 0.9rem;
+        color: var(--feed-gray);
+    }
+
+    .post-content {
+        padding: 1.5rem;
+    }
+
+    .post-title {
+        font-family: 'Playfair Display', serif;
+        font-size: 30px !important;
+        font-weight: 800;
+        color: var(--feed-navy);
+        margin-bottom: 1.2rem;
+    }
+
+    /* Center-aligned & larger YouTube videos */
+    .video-wrapper {
+        position: relative;
+        padding-bottom: 65%;
+        height: 0;
+        margin: 2.5rem auto;
+        max-width: 1100px;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+        border: 2px solid var(--feed-gold);
+    }
+
+    .video-wrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        height: 100%;
+        border: 0;
+    }
+
+    /* Twitter/X style – text-only */
+    .twitter-post .post-content {
+        font-size: 18px !important;
+        padding: 1.5rem 2rem;
+    }
+
+    .twitter-actions {
+        display: flex;
+        justify-content: space-around;
+        padding: 1rem;
+        border-top: 1px solid rgba(201, 169, 110, 0.15);
+        color: var(--feed-gray);
+        font-size: 1.1rem;
+    }
+
+    /* Instagram style – text + image */
+    .instagram-post .post-image {
+        width: 100%;
+        display: block;
+    }
+
+    .instagram-caption {
+        padding: 1.2rem 1.5rem;
+        font-size: 18px !important;
+    }
+
+    .insta-actions {
+        display: flex;
+        gap: 1.5rem;
+        padding: 0.8rem 1.5rem;
+        border-top: 1px solid rgba(201, 169, 110, 0.15);
+    }
+
+    .key-feed {
+        background: white;
+        border-radius: 20px;
+        padding: 4.5rem 3.5rem;
+        margin: 6rem auto 0;
+        max-width: 1450px;
+        box-shadow: 0 20px 70px rgba(201, 169, 110, 0.12);
+        border: 2px solid rgba(201, 169, 110, 0.2);
+    }
+
+    .key-feed h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 48px !important;
+        color: var(--feed-gold);
+        text-align: center;
+        margin-bottom: 3.5rem;
+    }
+
+    footer {
+        text-align: center;
+        padding: 6rem 2rem 4rem;
+        color: var(--feed-gray);
+        font-size: 1.2rem;
+        border-top: 2px solid var(--feed-gold);
+        background: linear-gradient(to top, rgba(253, 251, 247, 0.95), white);
+    }
+
+    /* 📱 Feed Modal Styling */
+
+    .feed-modal-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(15, 23, 42, 0.65);
+        backdrop-filter: blur(8px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 99999;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.4s ease;
+    }
+
+    .feed-modal-overlay.active {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .feed-modal {
+        background: white;
+        width: 95%;
+        max-width: 520px;
+        border-radius: 18px;
+        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.18);
+        overflow: hidden;
+        transform: translateY(40px);
+        transition: transform 0.4s ease;
+    }
+
+    .feed-modal-overlay.active .feed-modal {
+        transform: translateY(0);
+    }
+
+    .feed-modal-header {
+        display: flex;
+        align-items: center;
+        padding: 1rem 1.2rem;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    .feed-modal-avatar {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        background: var(--feed-gold);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        color: white;
+        margin-right: 0.8rem;
+        font-family: 'Playfair Display', serif;
+    }
+
+    .feed-modal-author {
+        font-weight: 700;
+    }
+
+    .feed-modal-time {
+        font-size: 0.85rem;
+        color: var(--feed-gray);
+    }
+
+    .feed-modal-content {
+        padding: 1.5rem;
+    }
+
+    .feed-modal-title {
+        font-family: 'Playfair Display', serif;
+        font-size: 24px;
+        font-weight: 800;
+        margin-bottom: 1rem;
+        color: var(--feed-coral);
+    }
+
+    .feed-modal-footer {
+        padding: 1rem;
+        border-top: 1px solid rgba(0, 0, 0, 0.08);
+        text-align: center;
+    }
+
+    #feedDismissBtn {
+        background: var(--feed-gold);
+        color: white;
+        border: none;
+        padding: 0.8rem 2rem;
+        border-radius: 999px;
+        font-weight: 600;
+        cursor: not-allowed;
+        transition: all 0.25s ease;
+    }
+
+    #feedDismissBtn:enabled {
+        cursor: pointer;
+        background: var(--feed-coral);
+        transform: scale(1.05);
+    }
+</style>
+<!-- 📱 FEED GUIDE MODAL -->
+<div class="feed-modal-overlay" id="feedGuideModal">
+    <div class="feed-modal">
+        <div class="feed-modal-header">
+            <div class="feed-modal-avatar">AD</div>
+
+            <div>
+                <div class="feed-modal-author">Advertising Gazette</div>
+
+                <div class="feed-modal-time">Just now</div>
+            </div>
+        </div>
+
+        <div class="feed-modal-content">
+            <h3 class="feed-modal-title">How This Chapter Works</h3>
+
+            <p>This chapter is designed like a <strong>social media feed</strong>. Scroll down to explore posts, videos,
+                comments, and real-world review moments.</p>
+
+            <p class="mt-4 text-sm text-gray-500">Engage with each section like a professional reviewing content.</p>
+        </div>
+
+        <div class="feed-modal-footer"><button disabled="disabled" id="feedDismissBtn">Continue in (8)</button></div>
+    </div>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const modal = document.getElementById('feedGuideModal');
+        const btn = document.getElementById('feedDismissBtn');
+
+        let countdown = 8;
+        let interval;
+
+        function startCountdown() {
+            interval = setInterval(() => {
+                countdown--;
+                btn.textContent = `Continue in (${countdown})`;
+
+                if (countdown <= 0) {
+                    clearInterval(interval);
+                    btn.textContent = "Start Exploring";
+                    btn.disabled = false;
+
+                    // Auto close
+                    closeModal();
+                }
+            }, 1000);
+        }
+
+        function closeModal() {
+            modal.classList.remove('active');
+            setTimeout(() => {
+                modal.style.display = 'none';
+            }, 400);
+        }
+
+        // Show modal after slight delay
+        setTimeout(() => {
+            modal.style.display = 'flex';
+            setTimeout(() => modal.classList.add('active'), 50);
+            startCountdown();
+        }, 800);
+
+        btn.addEventListener('click', () => {
+            if (!btn.disabled) closeModal();
+        });
+    });
+</script><!-- Full-Screen Toggle Button – Magazine Style -->
+
+<p><button aria-label="Toggle Fullscreen"
+        class="fixed top-8 right-8 z-[9999] p-4 rounded-2xl bg-white/80 backdrop-blur-xl border border-white/40 shadow-lg hover:shadow-2xl hover:scale-110 transition-all duration-300 flex items-center justify-center group"
+        id="fullscreen-btn"
+        style="box-shadow: 0 10px 30px rgba(0,109,119,0.15); border: 1px solid rgba(202,138,4,0.2);"><!-- Enter Fullscreen Icon --><img
+            alt="Enter fullscreen"
+            class="w-9 h-9 object-contain transition-all duration-300 group-hover:scale-110 group-hover:rotate-6"
+            id="enter-fs-icon" src="https://login.skillizee.io/s/articles/6971c474348e12598d489e16/images/fullscreen.png" />
+        <!-- Exit Fullscreen Icon (hidden by default) --> <img alt="Exit fullscreen"
+            class="w-9 h-9 object-contain transition-all duration-300 hidden group-hover:scale-110 group-hover:rotate-[-6deg]"
+            id="exit-fs-icon"
+            src="https://login.skillizee.io/s/articles/6971c474348e12598d489e16/images/exit.png" /></button><!-- JavaScript (same as your existing one – just connect the IDs) -->
+    <script>
+        const fsBtn = document.getElementById('fullscreen-btn');
+        const enterIcon = document.getElementById('enter-fs-icon');
+        const exitIcon = document.getElementById('exit-fs-icon');
+
+        fsBtn.addEventListener('click', () => {
+            if (!document.fullscreenElement) {
+                // Enter fullscreen
+                if (document.documentElement.requestFullscreen) {
+                    document.documentElement.requestFullscreen();
+                } else if (document.documentElement.webkitRequestFullscreen) {
+                    document.documentElement.webkitRequestFullscreen();
+                } else if (document.documentElement.msRequestFullscreen) {
+                    document.documentElement.msRequestFullscreen();
+                }
+                enterIcon.classList.add('hidden');
+                exitIcon.classList.remove('hidden');
+            } else {
+                // Exit fullscreen
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                } else if (document.webkitExitFullscreen) {
+                    document.webkitExitFullscreen();
+                } else if (document.msExitFullscreen) {
+                    document.msExitFullscreen();
+                }
+                enterIcon.classList.remove('hidden');
+                exitIcon.classList.add('hidden');
+            }
+        });
+
+        // Sync icons when fullscreen changes (Esc key, etc.)
+        document.addEventListener('fullscreenchange', () => {
+            if (document.fullscreenElement) {
+                enterIcon.classList.add('hidden');
+                exitIcon.classList.remove('hidden');
+            } else {
+                enterIcon.classList.remove('hidden');
+                exitIcon.classList.add('hidden');
+            }
+        });
+    </script>
+</p>
+
+<div class="feed-container">
+    <div class="feed-header">
+        <h1 class="chapter-title">Chapter 4.1</h1>
+
+        <div class="chapter-subtitle">The Expert Review</div>
+    </div>
+
+    <div class="audio-container">
+        <audio controls="" controlslist="nodownload" oncontextmenu="return false;">
+            <source src="https://pa2-cmd.github.io/Advertisement/4.1.mp3" type="audio/mp3" /> Your browser does not
+            support the audio element.
+        </audio>
+    </div>
+    <style type="text/css">
+        .audio-container {
+            position: relative;
+            background: url('https://login.skillizee.io/s/articles/698c30d80aff9e72a7604c2b/images/Subtitle(1).gif') center center no-repeat;
+            background-size: contain;
+            /* keeps the GIF's aspect ratio */
+            border-radius: 16px;
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+            margin: 1rem auto;
+            width: 90%;
+            max-width: 900px;
+            aspect-ratio: 1920 / 1080;
+            /* maintain original proportion */
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 1rem;
+            padding-bottom: 1rem;
+        }
+
+        /* Modern styled audio */
+        .audio-container audio {
+            width: 100%;
+            border-radius: 12px;
+            border: 2px solid #2D2B7E;
+            background: #F5F5FF;
+            height: 50px;
+            padding: 4px;
+            box-shadow: 0 3px 10px rgba(45, 43, 126, 0.3);
+        }
+
+        /* Lavender-toned player controls */
+        audio::-webkit-media-controls-panel {
+            background-color: #E6E6FA;
+            border-radius: 12px;
+        }
+
+        audio::-webkit-media-controls-play-button,
+        audio::-webkit-media-controls-timeline,
+        audio::-webkit-media-controls-current-time-display,
+        audio::-webkit-media-controls-time-remaining-display,
+        audio::-webkit-media-controls-volume-slider {
+            filter: hue-rotate(240deg) saturate(1.2);
+        }
+    </style>
+    <!-- 1. Feedback Loop – Twitter-style text post -->
+    <div class="social-post twitter-post">
+        <div class="post-header">
+            <div class="post-avatar">AD</div>
+
+            <div class="post-meta">
+                <div class="post-author">Advertising Gazette</div>
+
+                <div class="post-time">Feb 9, 2026 &bull; Pinned</div>
+            </div>
+        </div>
+
+        <div class="post-content">
+            <div class="post-title">1. Establishing the Feedback Loop</div>
+
+            <p class="mb-6">Feedback isn&rsquo;t critique &mdash; it&rsquo;s conversation.<br />
+                <br />
+                Owner + Expert = two different filters that turn your draft into legacy material:
+            </p>
+
+            <ul class="space-y-4 text-lg pl-8 list-disc">
+                <li><strong>Business Owner:</strong> &ldquo;Does this feel like us? Will customers recognize it?&rdquo;
+                </li>
+                <li><strong>Industry Expert:</strong> &ldquo;Is typography legible? Resolution correct?
+                    Trend-aligned?&rdquo;</li>
+            </ul>
+
+            <div class="video-wrapper mt-8"><iframe allowfullscreen="" frameborder="0" scrolling="no"
+                    src="https://www.youtube.com/embed/qTdhWI08j-k?rel=0"></iframe></div>
+
+            <div class="mt-6 p-6 bg-gray-50 rounded-xl border border-gold/20">
+                <h4 class="text-xl font-bold text-[var(--feed-gold)] mb-4">The Three-Point Check</h4>
+
+                <ol class="space-y-3 pl-8 list-decimal">
+                    <li>Clarity &ndash; obvious in 3 seconds?</li>
+                    <li>Creativity &ndash; thumb-stopping moment?</li>
+                    <li>Visual Appeal &ndash; balanced or cluttered?</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="twitter-actions"><span>❤️ 1.2K</span> <span>🔁 342</span> <span>💬 89</span></div>
+    </div>
+    <!-- 2. Buy-In – Instagram-style text + image post -->
+
+    <div class="social-post instagram-post">
+        <div class="post-header">
+            <div class="post-avatar">AD</div>
+
+            <div class="post-meta">
+                <div class="post-author">Advertising Gazette</div>
+
+                <div class="post-time">Feb 9, 2026 &bull; Sponsored</div>
+            </div>
+        </div>
+        <img alt="Expert Review Moment" class="post-image"
+            src="https://login.skillizee.io/s/articles/698977db17bd6963ae6bfe68/images/image-20260209113011-1.png" />
+        <div class="instagram-caption">
+            <div class="post-title">2. Real-World Application: The &quot;Buy-In&quot;</div>
+
+            <p class="mb-6">The make-or-break question:<br />
+                <strong>&ldquo;Would you actually use this for your business?&rdquo;</strong><br />
+                <br />
+                One answer separates classroom creativity from commercial legacy.
+            </p>
+
+            <div class="grid md:grid-cols-2 gap-6 mt-6">
+                <div class="p-6 bg-red-50 rounded-xl">
+                    <h4 class="text-xl font-bold text-red-700 mb-3">If &ldquo;No&rdquo;</h4>
+
+                    <p>This is gold &mdash; not failure.</p>
+
+                    <p class="mt-3">Ask: &ldquo;What specifically holds it back?&rdquo;</p>
+                </div>
+
+                <div class="p-6 bg-green-50 rounded-xl">
+                    <h4 class="text-xl font-bold text-green-700 mb-3">If &ldquo;Yes&rdquo;</h4>
+
+                    <p>You crossed the bridge.</p>
+
+                    <p class="mt-3">Student &rarr; consultant pipeline complete.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="insta-actions"><span>❤️ 2.4K</span> <span>💬 187</span> <span>🔗 Share</span></div>
+    </div>
+</div>
+<!-- Key Learnings – Feed-style comment thread -->
+
+<div class="key-feed">
+    <h2 class="text-6xl font-black text-center mb-16" style="color:var(--feed-gold);">Top Comments &bull; Legacy Lessons
+    </h2>
+
+    <div class="feed-grid">
+        <div class="feed-item">
+            <div class="post-header" style="padding:1rem;">
+                <div class="post-avatar" style="width:40px;height:40px;font-size:1.1rem;">AD</div>
+
+                <div class="post-meta">
+                    <div class="post-author">Advertising Gazette</div>
+
+                    <div class="post-time">Pinned &bull; 1h ago</div>
+                </div>
+            </div>
+
+            <div class="post-content">
+                <h4 style="font-size:30px; font-weight:900; color:var(--feed-coral); margin-bottom:1rem;">Radical
+                    Objectivity</h4>
+
+                <p style="font-size:18px;">Ego out. Feedback in. &ldquo;Negative&rdquo; = highest-value intel.</p>
+            </div>
+        </div>
+
+        <div class="feed-item">
+            <div class="post-header" style="padding:1rem;">
+                <div class="post-avatar" style="width:40px;height:40px;font-size:1.1rem;">AD</div>
+
+                <div class="post-meta">
+                    <div class="post-author">Advertising Gazette</div>
+
+                    <div class="post-time">Pinned &bull; 1h ago</div>
+                </div>
+            </div>
+
+            <div class="post-content">
+                <h4 style="font-size:30px; font-weight:900; color:var(--feed-teal); margin-bottom:1rem;">Justification
+                    Language</h4>
+
+                <p style="font-size:18px;">&ldquo;I like blue&rdquo; = weak<br />
+                    &ldquo;Blue = trust &amp; brand alignment&rdquo; = pro</p>
+            </div>
+        </div>
+
+        <div class="feed-item">
+            <div class="post-header" style="padding:1rem;">
+                <div class="post-avatar" style="width:40px;height:40px;font-size:1.1rem;">AD</div>
+
+                <div class="post-meta">
+                    <div class="post-author">Advertising Gazette</div>
+
+                    <div class="post-time">Pinned &bull; 1h ago</div>
+                </div>
+            </div>
+
+            <div class="post-content">
+                <h4 style="font-size:30px; font-weight:900; color:var(--feed-navy); margin-bottom:1rem;">Blind Spot
+                    Radar</h4>
+
+                <p style="font-size:18px;">You&rsquo;re too close. Experts see mobile legibility, buried CTA, trend
+                    drift.</p>
+            </div>
+        </div>
+
+        <div class="feed-item" style="grid-column:1/-1;">
+            <div class="post-header" style="padding:1rem;">
+                <div class="post-avatar" style="width:40px;height:40px;font-size:1.1rem;">AD</div>
+
+                <div class="post-meta">
+                    <div class="post-author">Advertising Gazette</div>
+
+                    <div class="post-time">Pinned &bull; 1h ago</div>
+                </div>
+            </div>
+
+            <div class="post-content">
+                <h4 style="font-size:30px; font-weight:900; color:var(--feed-gold); margin-bottom:1rem;">Client-First
+                    Legacy</h4>
+
+                <p style="font-size:18px;">Beautiful but doesn&rsquo;t sell = incomplete.<br />
+                    Client need &gt; designer taste.</p>
+            </div>
+        </div>
+    </div>
+    <!-- Preparation Checklist – Instagram carousel style -->
+
+    <div class="mt-16">
+        <h3 class="text-4xl font-bold text-center mb-10" style="color:var(--feed-gold);">Pre-Review Prep &ndash;
+            Don&rsquo;t Get Ghosted</h3>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="social-post twitter-post" style="margin:0;">
+                <div class="post-header">
+                    <div class="post-avatar" style="width:40px;height:40px;font-size:1.1rem;">1</div>
+
+                    <div class="post-meta">
+                        <div class="post-author">Clarity Drop</div>
+                    </div>
+                </div>
+
+                <div class="post-content">
+                    <p class="text-lg">30-second elevator pitch locked in.</p>
+                </div>
+            </div>
+
+            <div class="social-post twitter-post" style="margin:0;">
+                <div class="post-header">
+                    <div class="post-avatar" style="width:40px;height:40px;font-size:1.1rem;">2</div>
+
+                    <div class="post-meta">
+                        <div class="post-author">Creativity Flex</div>
+                    </div>
+                </div>
+
+                <div class="post-content">
+                    <p class="text-lg">Highlight one thumb-stopping element.</p>
+                </div>
+            </div>
+
+            <div class="social-post twitter-post" style="margin:0;">
+                <div class="post-header">
+                    <div class="post-avatar" style="width:40px;height:40px;font-size:1.1rem;">3</div>
+
+                    <div class="post-meta">
+                        <div class="post-author">Pro Energy</div>
+                    </div>
+                </div>
+
+                <div class="post-content">
+                    <p class="text-lg">Clean final files only &ndash; no WIP.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer
+    class="mt-32 py-20 text-center text-gray-700 border-t-4 border-[var(--feed-gold)] bg-gradient-to-b from-white to-[#fdfbf7]">
+    <p class="text-2xl font-bold mb-4">Ad-venture - Creating and Advertisement</p>
+
+    <p class="text-lg">skillizee.io</p>
+</footer>

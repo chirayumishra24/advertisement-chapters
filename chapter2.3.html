@@ -1,0 +1,521 @@
+<div>
+    <div>
+        <div>
+            <div>
+                <div>
+                    <div>
+                        <div>
+                            <div>
+                                <meta charset="UTF-8">
+                                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<title></title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap"
+    rel="stylesheet" />
+<link rel="stylesheet" href="responsive.css" />
+<style type="text/css">
+    :root {
+        --accent-orange: #f97316;
+        --accent-yellow: #fbbf24;
+        --accent-red: #dc2626;
+        --accent-blue: #1e40af;
+        --paper: #fdfdfd;
+        --text-dark: #111827;
+        --text-gray: #4b5563;
+        --border: #d1d5db;
+    }
+
+    body {
+        font-family: 'Inter', sans-serif;
+        background: var(--paper);
+        color: var(--text-dark);
+        margin: 0;
+        padding: 0;
+        line-height: 1.85;
+        font-size: 18px;
+    }
+
+    .book-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 1rem;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+
+        /* ADD THESE LINES */
+        background-image: url('https://login.skillizee.io/s/articles/698d854923650e1d987b7e6d/images/Subtitle1.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+
+    .book {
+        flex: 1;
+        position: relative;
+        perspective: 2200px;
+        transform-style: preserve-3d;
+    }
+
+    .book-page {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+
+        /* CHANGE THIS PART */
+        background-image: url('https://login.skillizee.io/s/articles/698d854923650e1d987b7e6d/images/Subtitle1.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        border-radius: 12px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
+        transition: transform 0.9s cubic-bezier(0.4, 0.0, 0.2, 1), box-shadow 0.9s ease;
+        transform-style: preserve-3d;
+        backface-visibility: hidden;
+        transform-origin: left center;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+
+    .book-page::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    .book-page::-webkit-scrollbar-track {
+        background: #f8f8f8;
+        border-radius: 10px;
+        margin: 4px;
+    }
+
+    .book-page::-webkit-scrollbar-thumb {
+        background: var(--accent-color, var(--accent-orange));
+        border-radius: 10px;
+        border: 2px solid #f8f8f8;
+    }
+
+    .book-page::-webkit-scrollbar-thumb:hover {
+        background: var(--accent-color-dark, #c2410c);
+    }
+
+    .book-page.flipped {
+        transform: rotateY(-180deg);
+        box-shadow: -24px 0 60px rgba(0, 0, 0, 0.28);
+    }
+
+    .book-page.active {
+        box-shadow: 0 24px 70px rgba(0, 0, 0, 0.2);
+        z-index: 10;
+    }
+
+    .page-content {
+        padding: 3rem 3rem;
+        max-width: 1350px;
+        margin: 0 auto;
+    }
+
+    @media (max-width: 1024px) {
+        .page-content {
+            padding: 3rem 2rem;
+        }
+    }
+
+    .big-title {
+        font-family: 'Playfair Display', serif;
+        font-size: 5.2rem !important;
+        font-weight: 900;
+        color: var(--accent-color, var(--accent-yellow));
+        line-height: 0.9;
+        margin: 0 0 1.2rem;
+        text-transform: uppercase;
+        letter-spacing: -2.5px;
+    }
+
+    .subtitle {
+        font-size: 2.3rem;
+        font-weight: 600;
+        color: var(--accent-red);
+        margin-bottom: 3rem;
+    }
+
+    .drop-cap:first-letter {
+        float: left;
+        font-family: 'Playfair Display', serif;
+        font-size: 8rem;
+        line-height: 0.72;
+        margin: 0 0.6rem 0 0;
+        color: var(--accent-red);
+        font-weight: 900;
+    }
+
+    .section-title {
+        font-family: 'Playfair Display', serif;
+        font-size: 3.2rem !important;
+        font-weight: 800;
+        color: var(--accent-color, var(--accent-orange));
+        margin: 4rem 0 1.8rem;
+        padding-left: 1.2rem;
+        border-left: 8px solid var(--accent-yellow);
+    }
+
+    .highlight-box {
+        margin: 3rem 0;
+        padding: 2.5rem;
+        border-radius: 12px;
+        font-size: 1.35rem;
+        line-height: 1.5;
+    }
+
+    .video-wrapper {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+        margin: 3rem 0;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 14px 44px rgba(0, 0, 0, 0.16);
+    }
+
+    .video-wrapper iframe {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .image-block img {
+        width: 100%;
+        border-radius: 14px;
+        box-shadow: 0 14px 40px rgba(0, 0, 0, 0.14);
+        margin: 2.5rem 0;
+    }
+
+    .audio-container {
+        position: relative;
+        background: url('https://login.skillizee.io/s/articles/698c30d80aff9e72a7604c2b/images/Subtitle(1).gif') center center no-repeat;
+        background-size: contain;
+        border-radius: 16px;
+        box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+        margin: 2rem auto;
+        width: 92%;
+        max-width: 960px;
+        aspect-ratio: 1920 / 1080;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 1.2rem;
+    }
+
+    .audio-container audio {
+        width: 100%;
+        border-radius: 12px;
+        border: 2px solid #2D2B7E;
+        background: #F5F5FF;
+        height: 54px;
+        padding: 4px;
+        box-shadow: 0 3px 10px rgba(45, 43, 126, 0.3);
+    }
+
+    audio::-webkit-media-controls-panel {
+        background-color: #E6E6FA;
+        border-radius: 12px;
+    }
+
+    audio::-webkit-media-controls-play-button,
+    audio::-webkit-media-controls-timeline,
+    audio::-webkit-media-controls-current-time-display,
+    audio::-webkit-media-controls-time-remaining-display,
+    audio::-webkit-media-controls-volume-slider {
+        filter: hue-rotate(240deg) saturate(1.2);
+    }
+
+    .key-learning-item {
+        background: rgba(249, 115, 22, 0.06);
+        border-radius: 14px;
+        padding: 3rem;
+        margin: 3rem 0;
+        border-left: 10px solid var(--accent-color, var(--accent-orange));
+    }
+
+    .book-controls {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+        padding: 1.8rem 2rem;
+        background: rgba(255, 255, 255, 0.97);
+        backdrop-filter: blur(14px);
+        border-top: 1px solid rgba(0, 0, 0, 0.08);
+        position: sticky;
+        bottom: 0;
+        z-index: 100;
+    }
+
+    .book-controls button {
+        background: var(--accent-color, var(--accent-orange));
+        color: white;
+        padding: 0.5rem 1.4rem;
+        border: none;
+        border-radius: 12px;
+        font-weight: 400;
+        font-size: 18px;
+        cursor: pointer;
+        transition: all 0.3s;
+    }
+
+    .book-controls button:hover:not(:disabled) {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 30px rgba(249, 115, 22, 0.35);
+    }
+
+    .book-controls button:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+
+    textarea {
+        font-family: inherit;
+        font-size: 1.1rem;
+        line-height: 1.6;
+    }
+</style>
+<!-- Fullscreen button -->
+<p><button aria-label="Toggle Fullscreen"
+        class="fixed top-8 right-8 z-[9999] p-5 rounded-2xl bg-white/85 backdrop-blur-xl border border-white/50 shadow-2xl hover:shadow-3xl hover:scale-110 transition-all duration-300 flex items-center justify-center group"
+        id="fullscreen-btn"><img alt="Enter fullscreen"
+            class="w-10 h-10 object-contain transition-all duration-300 group-hover:scale-110 group-hover:rotate-6"
+            id="enter-fs-icon" src="https://login.skillizee.io/s/articles/6971c474348e12598d489e16/images/fullscreen.png" /> <img
+            alt="Exit fullscreen"
+            class="w-10 h-10 object-contain transition-all duration-300 hidden group-hover:scale-110 group-hover:rotate-[-6deg]"
+            id="exit-fs-icon" src="https://login.skillizee.io/s/articles/6971c474348e12598d489e16/images/exit.png" /></button>
+    <script>
+        const fsBtn = document.getElementById('fullscreen-btn');
+        const enterIcon = document.getElementById('enter-fs-icon');
+        const exitIcon = document.getElementById('exit-fs-icon');
+        fsBtn.addEventListener('click', () => {
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen?.();
+                enterIcon.classList.add('hidden');
+                exitIcon.classList.remove('hidden');
+            } else {
+                document.exitFullscreen?.();
+                enterIcon.classList.remove('hidden');
+                exitIcon.classList.add('hidden');
+            }
+        });
+        document.addEventListener('fullscreenchange', () => {
+            if (document.fullscreenElement) {
+                enterIcon.classList.add('hidden');
+                exitIcon.classList.remove('hidden');
+            } else {
+                enterIcon.classList.remove('hidden');
+                exitIcon.classList.add('hidden');
+            }
+        });
+    </script>
+</p>
+
+<div class="book-container">
+    <div class="book"><!-- Page 1 -->
+        <div class="book-page active" style="--accent-color: var(--accent-orange); --accent-color-dark: #c2410c;">
+            <div class="page-content">
+                <h1 class="big-title">Chapter 2.3</h1>
+
+                <div class="subtitle">Psychological Triggers (Emotions &amp; Action)</div>
+
+                <div class="audio-container">
+                    <audio controls="" controlslist="nodownload" oncontextmenu="return false;">
+                        <source src="https://pa2-cmd.github.io/Advertisement/2.3.mp3" type="audio/mp3" /> Your browser
+                        does not support the audio element.
+                    </audio>
+                </div>
+
+                <p class="drop-cap mt-10 text-xl leading-relaxed"><strong>The Emotional Hook: Why We Care</strong><br />
+                    <br />
+                    An emotional hook is a creative strategy that connects a product or message to a viewer&rsquo;s
+                    feelings, memories, or values. Humans are &ldquo;feeling machines that think&rdquo; &mdash; we often
+                    make decisions based on emotion and then justify them with logic.
+                </p>
+
+                <div class="video-wrapper mt-12"><iframe allowfullscreen="" frameborder="0" scrolling="no"
+                        src="https://www.youtube.com/embed/Ty9E4DVgeKE?rel=0"></iframe></div>
+
+                <h2 class="section-title">1. Common Emotional Triggers</h2>
+
+                <div class="flex flex-col md:flex-row gap-10 mt-8 items-start"><!-- 🎥 9:16 Video (left column) -->
+                    <div class="w-full md:w-1/3">
+                        <div class="relative w-full" style="padding-top: 177.78%;"><iframe allowfullscreen=""
+                                class="absolute top-0 left-0 w-full h-full rounded-md border border-gray-500 shadow-md"
+                                frameborder="0" scrolling="no"
+                                src="https://www.youtube.com/embed/0eU0Glxncwg?rel=0"></iframe></div>
+                    </div>
+                    <!-- Right column: text + new image below -->
+
+                    <div class="w-full md:w-2/3 space-y-8">
+                        <ul class="space-y-6 text-lg list-disc pl-6">
+                            <li><strong>Belonging &amp; Family:</strong> Many ads focus on the bond between parents and
+                                children...</li>
+                            <li><strong>Aspiration:</strong> Recruitment ads for the Army rarely focus on the salary...
+                            </li>
+                            <li><strong>Fear &amp; Protection:</strong> Road Safety or Insurance campaigns often use
+                                &ldquo;Fear&rdquo;...</li>
+                        </ul>
+                        <!-- New image placed below the text list, aligned right of the video -->
+
+                        <div class="mt-6"><img alt="Master emotional triggers in advertising illustration"
+                                class="w-full rounded-lg shadow-md border border-gray-300 object-cover" loading="lazy"
+                                src="https://login.skillizee.io/s/articles/699591b5f690db6097925718/images/Master.jpg" /></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Page 2 -->
+
+        <div class="book-page" style="--accent-color: var(--accent-red); --accent-color-dark: #b91c1c;">
+            <div class="page-content">
+                <h2 class="section-title">2. The Call to Action (CTA)</h2>
+
+                <div class="video-wrapper"><iframe allowfullscreen=""
+                        src="https://www.youtube.com/embed/TM5hQbQzJDk?rel=0"></iframe></div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 my-12"><img alt="" class="image-block"
+                        src="https://login.skillizee.io/s/articles/6986e9b6bb8d9f129d84af93/images/image-20260207125855-2.png" /> <img alt=""
+                        class="image-block"
+                        src="https://login.skillizee.io/s/articles/6986e9b6bb8d9f129d84af93/images/image-20260207125855-3.png" /> <img alt=""
+                        class="image-block"
+                        src="https://login.skillizee.io/s/articles/6986e9b6bb8d9f129d84af93/images/image-20260207125855-4.png" /></div>
+
+                <p class="text-xl leading-relaxed mb-8">A Call to Action is a clear, direct instruction that tells the
+                    audience exactly what step to take. Without a CTA, even the most beautiful ad is just
+                    &ldquo;art&rdquo;.</p>
+
+                <h4 class="text-3xl font-black mb-6" style="color:var(--accent-orange);">The Anatomy of a Strong CTA:
+                </h4>
+
+                <ul class="space-y-5 text-lg pl-10 list-disc">
+                    <li><strong>Use Strong Verbs:</strong> &ldquo;Get Informed&rdquo;, &ldquo;Claim Now&rdquo;,
+                        &ldquo;Join Today&rdquo;</li>
+                    <li><strong>Create Urgency:</strong> &ldquo;Limited Time&rdquo;, &ldquo;Only Today&rdquo;,
+                        &ldquo;Before It&rsquo;s Gone&rdquo;</li>
+                    <li><strong>Be Specific:</strong> &ldquo;Vaccinate Your Child&rdquo; &gt; &ldquo;Click here&rdquo;
+                    </li>
+                </ul>
+
+                <div class="highlight-box mt-12"
+                    style="background:rgba(220,38,38,0.09); border-left:10px solid var(--accent-red);">
+                    <h3 style="font-size:34px; font-weight:900; color:var(--accent-red);">Quick Tip</h3>
+
+                    <p class="text-xl mt-6 leading-relaxed">A strong CTA turns emotion into action &mdash; it&rsquo;s
+                        the bridge from feeling to doing.</p>
+                </div>
+            </div>
+        </div>
+        <!-- Page 3 – Key Learnings -->
+
+        <div class="book-page" style="--accent-color: var(--accent-yellow); --accent-color-dark: #d97706;">
+            <div class="page-content">
+                <h2 class="text-6xl font-black text-center mb-20" style="color:var(--accent-yellow);">Key Learnings</h2>
+
+                <div class="key-learning-item">
+                    <h4
+                        style="font-size:34px; font-weight:900; color:var(--accent-yellow); text-align:center; margin-bottom:1.8rem;">
+                        Emotion Captures, Logic Justifies</h4>
+
+                    <p class="text-xl text-center">Use an emotional hook to grab attention, but provide facts to help
+                        the audience feel &ldquo;smart&rdquo; about their choice.</p>
+                </div>
+
+                <div class="key-learning-item"
+                    style="background:rgba(220,38,38,0.08); border-left:10px solid var(--accent-red);">
+                    <h4
+                        style="font-size:34px; font-weight:900; color:var(--accent-red); text-align:center; margin-bottom:1.8rem;">
+                        The Power of &quot;You&quot;</h4>
+
+                    <p class="text-xl text-center">Effective ads talk directly to the viewer. Using &ldquo;You&rdquo; or
+                        &ldquo;Your&rdquo; makes it personal.</p>
+                </div>
+
+                <div class="key-learning-item"
+                    style="background:rgba(30,58,138,0.08); border-left:10px solid var(--accent-blue);">
+                    <h4
+                        style="font-size:34px; font-weight:900; color:var(--accent-blue); text-align:center; margin-bottom:1.8rem;">
+                        One Ad, One Action</h4>
+
+                    <p class="text-xl text-center">Don&rsquo;t confuse the audience with too many instructions.</p>
+                </div>
+
+                <div class="key-learning-item mt-10"
+                    style="background:rgba(251,191,36,0.08); border-left:10px solid var(--accent-yellow);">
+                    <h4
+                        style="font-size:34px; font-weight:900; color:var(--accent-yellow); text-align:center; margin-bottom:1.8rem;">
+                        The Bridge</h4>
+
+                    <p class="text-xl italic text-center">The CTA connects the emotion created by the ad to real-world
+                        action.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Controls -->
+
+    <div class="book-controls"><button disabled="disabled" id="prevBtn">Previous</button><span id="pageIndicator">Page 1
+            / 3</span><button id="nextBtn">Next</button></div>
+</div>
+<script>
+    let currentPage = 0;
+    const pages = document.querySelectorAll(".book-page");
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+    const pageIndicator = document.getElementById("pageIndicator");
+
+    function updateIndicator() {
+        pageIndicator.textContent = `Page ${currentPage + 1} / ${pages.length}`;
+        prevBtn.disabled = currentPage === 0;
+        nextBtn.disabled = currentPage === pages.length - 1;
+    }
+
+    function showPage(index) {
+        if (index < 0 || index >= pages.length) return;
+        pages.forEach((p, i) => {
+            p.classList.remove('active', 'flipped');
+            if (i < index) p.classList.add('flipped');
+            if (i === index) p.classList.add('active');
+        });
+        currentPage = index;
+        updateIndicator();
+        pages[currentPage].scrollTop = 0;
+    }
+
+    prevBtn.addEventListener('click', () => { if (currentPage > 0) showPage(currentPage - 1); });
+    nextBtn.addEventListener('click', () => { if (currentPage < pages.length - 1) showPage(currentPage + 1); });
+
+    document.addEventListener('keydown', e => {
+        if (e.key === 'ArrowLeft' && currentPage > 0) showPage(currentPage - 1);
+        if (e.key === 'ArrowRight' && currentPage < pages.length - 1) showPage(currentPage + 1);
+    });
+
+    let touchStartX = 0;
+    document.addEventListener('touchstart', e => touchStartX = e.changedTouches[0].screenX);
+    document.addEventListener('touchend', e => {
+        const diff = touchStartX - e.changedTouches[0].screenX;
+        if (Math.abs(diff) > 60) {
+            if (diff > 0 && currentPage < pages.length - 1) showPage(currentPage + 1);
+            if (diff < 0 && currentPage > 0) showPage(currentPage - 1);
+        }
+    });
+
+    updateIndicator();
+</script>

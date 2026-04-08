@@ -1,0 +1,666 @@
+<div>
+    <div>
+        <div>
+            <div>
+                <div>
+                    <div>
+                        <div>
+                            <div>
+                                <div>
+                                    <div>
+                                        <div>
+                                            <div>
+                                                <meta charset="UTF-8">
+                                                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<title></title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link
+    href="https://fonts.googleapis.com/css2?family=Impact&amp;family=Bangers&amp;family=Comic+Neue:wght@700&amp;display=swap"
+    rel="stylesheet" />
+<link rel="stylesheet" href="responsive.css" />
+<style type="text/css">
+    :root {
+        --dark-bg: #0f0f1a;
+        --charcoal: #1e1e2e;
+        --highlight-yellow: #ffeb3b;
+        --highlight-pink: #ff4081;
+        --highlight-cyan: #00e5ff;
+        --text-light: #f5f5f5;
+        --border-black: #000;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        background: var(--dark-bg);
+        color: var(--text-light);
+        font-family: 'Comic Neue', cursive;
+        background-image:
+            radial-gradient(circle at 15% 25%, rgba(255, 235, 59, 0.12) 0%, transparent 15%),
+            radial-gradient(circle at 85% 75%, rgba(255, 64, 129, 0.12) 0%, transparent 15%);
+        min-height: 100vh;
+    }
+
+    .comic-wrapper {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 2rem 1rem;
+    }
+
+    .hero-banner {
+        position: relative;
+        height: 420px;
+        margin-bottom: 3rem;
+        border-radius: 24px;
+        overflow: hidden;
+        box-shadow: 12px 12px 0 var(--border-black);
+        background-image: url('https://login.skillizee.io/s/articles/698abb886ba0c25dd51ec503/images/579576381196.jpg');
+        background-size: cover;
+        background-position: center;
+    }
+
+    .hero-overlay {
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle at center, rgba(255, 235, 59, 0.4) 0%, rgba(200, 16, 46, 0.6) 70%, rgba(0, 0, 0, 0.85) 100%);
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 2;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 0 2rem;
+    }
+
+    .hero-title {
+        font-family: 'Bangers', cursive;
+        font-size: 6rem;
+        color: white;
+        -webkit-text-stroke: 5px black;
+        text-shadow: 8px 8px 0 black;
+        line-height: 1.5;
+        margin: 0;
+    }
+
+    .hero-subtitle {
+        font-family: 'Impact', sans-serif;
+        font-size: 3.2rem;
+        color: var(--highlight-yellow);
+        -webkit-text-stroke: 3px black;
+        margin-top: -0.5rem;
+    }
+
+    .content-area {
+        display: grid;
+        grid-template-columns: 1fr 320px;
+        gap: 2.5rem;
+    }
+
+    .main-content {
+        background: var(--charcoal);
+        border: 8px solid black;
+        border-radius: 20px;
+        padding: 2.5rem;
+        box-shadow: 10px 10px 0 black;
+    }
+
+    .section-title {
+        font-family: 'Impact', sans-serif;
+        font-size: 3.8rem;
+        color: var(--highlight-pink);
+        -webkit-text-stroke: 4px black;
+        margin: 2.5rem 0 1.5rem;
+        text-align: center;
+    }
+
+    .blueprint-card {
+        background: white;
+        border: 6px solid black;
+        border-radius: 16px;
+        padding: 2.2rem;
+        margin: 2rem 0;
+        box-shadow: 8px 8px 0 black;
+        color: black;
+    }
+
+    .callout-label {
+        font-family: 'Bangers', cursive;
+        font-size: 2.2rem;
+        color: white;
+        background: var(--highlight-cyan);
+        border: 5px solid black;
+        border-radius: 999px;
+        padding: 0.6rem 1.5rem;
+        display: inline-block;
+        margin-bottom: 1.2rem;
+        box-shadow: 4px 4px 0 black;
+        text-align: center;
+    }
+
+    .magazine-image {
+        border: 8px solid black;
+        border-radius: 16px;
+        box-shadow: 8px 8px 0 black;
+        margin: 1.8rem auto;
+        display: block;
+        max-width: 100%;
+    }
+
+    .sidebar {
+        background: var(--charcoal);
+        border: 8px solid black;
+        border-radius: 20px;
+        padding: 1rem;
+        box-shadow: 10px 10px 0 black;
+        height: fit-content;
+        position: sticky;
+        top: 2rem;
+    }
+
+    .sidebar h4 {
+        font-family: 'Impact', sans-serif;
+        font-size: 2.4rem;
+        color: var(--highlight-yellow);
+        -webkit-text-stroke: 2px black;
+        margin-bottom: 1.5rem;
+        text-align: center;
+    }
+
+    .fact-bubble {
+        background: white;
+        border: 6px solid black;
+        border-radius: 50px / 60px;
+        padding: 2rem 1rem;
+        box-shadow: 6px 6px 0 black;
+        position: relative;
+        color: black;
+        font-size: 1.3rem;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .fact-bubble img {
+        position: absolute;
+        top: -60px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 130px;
+        height: auto;
+        filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.7));
+    }
+
+    .fact-bubble::after {
+        content: '';
+        position: absolute;
+        bottom: -30px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 0;
+        border-left: 20px solid transparent;
+        border-right: 20px solid transparent;
+        border-top: 20px solid black;
+    }
+
+    footer {
+        text-align: center;
+        padding: 4rem 2rem;
+        color: #aaa;
+        font-size: 1.3rem;
+        border-top: 6px double white;
+        margin-top: 4rem;
+    }
+
+    #fullscreen-btn {
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+        z-index: 9999;
+        background: rgba(255, 255, 255, 0.7);
+        border: none;
+        border-radius: 50%;
+        padding: 0.8rem;
+        cursor: pointer;
+        transition: all 0.3s;
+    }
+
+    #fullscreen-btn:hover {
+        background: rgba(255, 255, 255, 0.9);
+        transform: scale(1.15);
+    }
+
+    @media (max-width: 1024px) {
+        .content-area {
+            grid-template-columns: 1fr;
+        }
+
+        .sidebar {
+            position: static;
+        }
+    }
+</style>
+<!-- Fullscreen Toggle -->
+<p><button aria-label="Toggle Fullscreen" id="fullscreen-btn"><img alt="Enter Fullscreen" class="w-10 h-10"
+            id="enter-fs-icon" src="https://login.skillizee.io/s/articles/6971c474348e12598d489e16/images/fullscreen.png" /> <img
+            alt="Exit Fullscreen" class="w-10 h-10 hidden" id="exit-fs-icon"
+            src="https://login.skillizee.io/s/articles/6971c474348e12598d489e16/images/exit.png" /></button></p>
+
+<div class="comic-wrapper"><!-- Hero Header -->
+    <div class="hero-banner">
+        <div class="hero-overlay">&nbsp;</div>
+
+        <div class="hero-content">
+            <h1 class="hero-title"><span style="font-size:72px;">CHAPTER 3.3</span></h1>
+
+            <div class="hero-subtitle"><span style="font-size:48px;">CREATING THE CAMPAIGN (HANDMADE TO DIGITAL)</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="audio-container">
+        <audio controls="" controlslist="nodownload" oncontextmenu="return false;">
+            <source src="https://pa2-cmd.github.io/Advertisement/3.3.mp3" type="audio/mp3" /> Your browser does not
+            support the audio element.
+        </audio>
+    </div>
+    <style type="text/css">
+        .audio-container {
+            position: relative;
+            background: url('https://login.skillizee.io/s/articles/698c30d80aff9e72a7604c2b/images/Subtitle(1).gif') center center no-repeat;
+            background-size: contain;
+            /* keeps the GIF's aspect ratio */
+            border-radius: 16px;
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+            margin: 1rem auto;
+            width: 90%;
+            max-width: 900px;
+            aspect-ratio: 1920 / 1080;
+            /* maintain original proportion */
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 1rem;
+            padding-bottom: 1rem;
+        }
+
+        /* Modern styled audio */
+        .audio-container audio {
+            width: 100%;
+            border-radius: 12px;
+            border: 2px solid #2D2B7E;
+            background: #F5F5FF;
+            height: 50px;
+            padding: 4px;
+            box-shadow: 0 3px 10px rgba(45, 43, 126, 0.3);
+        }
+
+        /* Lavender-toned player controls */
+        audio::-webkit-media-controls-panel {
+            background-color: #E6E6FA;
+            border-radius: 12px;
+        }
+
+        audio::-webkit-media-controls-play-button,
+        audio::-webkit-media-controls-timeline,
+        audio::-webkit-media-controls-current-time-display,
+        audio::-webkit-media-controls-time-remaining-display,
+        audio::-webkit-media-controls-volume-slider {
+            filter: hue-rotate(240deg) saturate(1.2);
+        }
+    </style>
+    <div class="content-area"><!-- Main Content -->
+        <div class="main-content"><!-- Intro -->
+            <div class="blueprint-card">
+                <div class="callout-label"><span style="font-size:24px;">CORE PRINCIPLE</span></div>
+
+                <p class="text-2xl leading-relaxed text-black"><span style="font-size:18px;">From sketch to screen
+                        &mdash; every great campaign starts with a clear visual plan and ends with a powerful digital
+                        execution.</span></p>
+            </div>
+            <!-- 1. The Poster -->
+
+            <h2 class="section-title"><span style="font-size:36px;">1. THE POSTER: FROM SKETCH TO VISUAL IMPACT</span>
+            </h2>
+
+            <div class="blueprint-card">
+                <div class="callout-label"><span style="font-size:24px;">GOAL IN &lt;3 SECONDS</span></div>
+
+                <p class="text-xl mb-6 text-black"><span style="font-size:18px;">The poster must grab attention
+                        instantly. Your sketch should focus on a clear <strong>Visual Hierarchy</strong>. </span></p>
+                <!-- Larger, responsive 16:9 YouTube video -->
+
+                <div class="video-wrapper mb-8 max-w-4xl mx-auto">
+                    <!-- centers it + limits max width on very wide screens -->
+                    <div class="relative w-full pt-[56.25%] overflow-hidden rounded-xl shadow-xl">
+                        <!-- 56.25% = exactly 9/16 → 16:9 --><iframe allowfullscreen=""
+                            class="absolute inset-0 w-full h-full" frameborder="0" scrolling="no"
+                            src="https://www.youtube.com/embed/nMZaSvwjV7w?rel=0"></iframe>
+                    </div>
+                </div>
+
+                <ul class="space-y-4 text-xl pl-8 list-disc mt-4 text-black">
+                    <li><span style="font-size:18px;"><strong>The Focal Point:</strong> What is the first thing people
+                            should see? (e.g., powerful image or bold headline)</span></li>
+                    <li><span style="font-size:18px;"><strong>The Rule of Thirds:</strong> Avoid center placement. Use a
+                            3&times;3 grid &mdash; place key elements at intersections for more energy.</span></li>
+                    <li><span style="font-size:18px;"><strong>Emotional Hooks &ndash; Color Triggers:</strong></span>
+                        <ul class="space-y-2 pl-8 list-disc mt-2 text-lg">
+                            <li><span style="font-size:18px;">Blue &rarr; trust / calm</span></li>
+                            <li><span style="font-size:18px;">Red &rarr; urgency / passion</span></li>
+                            <li><span style="font-size:18px;">Green &rarr; growth / health</span></li>
+                        </ul>
+                    </li>
+                    <li><span style="font-size:18px;"><strong>Typography:</strong> Maximum two fonts &mdash; one bold
+                            title + one clean readable font for details.</span></li>
+                </ul>
+            </div>
+            <!-- 2. Storyboarding -->
+
+            <h2 class="section-title"><span style="font-size:36px;">2. STORYBOARDING: THE BLUEPRINT FOR ANIMATION</span>
+            </h2>
+
+            <div class="blueprint-card">
+                <div class="callout-label"><span style="font-size:24px;">WHY STORYBOARD FIRST</span></div>
+
+                <p class="text-xl mb-6 text-black"><span style="font-size:18px;">Before opening software, map out the
+                        &ldquo;beats&rdquo; of your video. A storyboard prevents getting lost in tools.</span></p>
+                <img alt="Storyboard Blueprint" class="magazine-image"
+                    src="https://login.skillizee.io/s/articles/698975b8a4b5950f3a4135d8/images/image-20260209112050-1.png" />
+                <div class="callout-label mt-6"><span style="font-size:24px;">KEY FRAMES TO INCLUDE</span></div>
+
+                <ol class="space-y-6 list-decimal pl-8 text-xl mt-4 text-black">
+                    <li><span style="font-size:18px;"><strong>The Hook (0&ndash;3s):</strong> Visual or question that
+                            stops the scroll.</span></li>
+                    <li><span style="font-size:18px;"><strong>The Problem:</strong> Scene showing the &ldquo;pain
+                            point&rdquo; your campaign addresses.</span></li>
+                    <li><span style="font-size:18px;"><strong>The Solution:</strong> Your product/service/message in
+                            action.</span></li>
+                    <li><span style="font-size:18px;"><strong>The Call to Action (CTA):</strong> Clear instruction
+                            (e.g., &ldquo;Visit our site&rdquo;, &ldquo;Join the movement&rdquo;).</span></li>
+                </ol>
+
+                <p class="mt-6 text-lg italic text-black"><span style="font-size:18px;"><strong>Pro Tip:</strong> Draw
+                        small arrows to indicate motion. If text slides in from left &rarr; draw arrow pointing
+                        right.</span></p>
+            </div>
+            <!-- 3. Digital Tools & Execution -->
+
+            <h2 class="section-title"><span style="font-size:36px;">3. DIGITAL TOOLS &amp; EXECUTION</span></h2>
+
+            <div class="blueprint-card pointer-line">
+                <div class="callout-label"><span style="font-size:24px;">FROM SKETCH &rarr; DIGITAL REALITY</span></div>
+
+                <h4 class="text-3xl font-black text-center mt-8 mb-4"
+                    style="color:#f00; -webkit-text-stroke: 2px black;"><span style="font-size:24px;">CANVA (GRAPHIC
+                        DESIGN &amp; SIMPLE VIDEO)</span></h4>
+
+                <ul class="space-y-4 text-xl pl-8 list-disc text-black">
+                    <li><span style="font-size:18px;"><strong>Brand Kit:</strong> Set colors/fonts early &rarr; every ad
+                            stays consistent.</span></li>
+                    <li><span style="font-size:18px;"><strong>Animate Tool:</strong> Click &ldquo;Animate&rdquo; on
+                            elements &rarr; text fades in, images pop &rarr; static poster becomes motion
+                            graphic.</span></li>
+                </ul>
+
+                <h4 class="text-3xl font-black text-center mt-10 mb-4"
+                    style="color:#00f; -webkit-text-stroke: 2px black;"><span style="font-size:24px;">POWERPOINT
+                        (SURPRISING ANIMATION POWER)</span></h4>
+                <!-- Taller-feeling responsive 16:9 YouTube embed -->
+
+                <div class="video-wrapper mb-8 max-w-5xl mx-auto">
+                    <!-- wider max-width = taller effective height on larger screens -->
+                    <div class="relative w-full pt-[56.25%] overflow-hidden rounded-xl shadow-xl">
+                        <!-- 56.25% = 9/16 → perfect 16:9 --><iframe allowfullscreen=""
+                            class="absolute inset-0 w-full h-full" frameborder="0" scrolling="no"
+                            src="https://www.youtube.com/embed/q8ozrZLLuZQ?rel=0"></iframe>
+                    </div>
+                </div>
+                <img alt="Morph Transition Diagram" class="magazine-image"
+                    src="https://login.skillizee.io/s/articles/698975b8a4b5950f3a4135d8/images/image-20260209112050-2.png" />
+                <p class="text-xl mt-4 text-black"><span style="font-size:18px;"><strong>Morph Transition cheat
+                            code:</strong> Duplicate slide &rarr; move objects &rarr; apply Morph &rarr; PowerPoint
+                        auto-animates movement. </span></p>
+
+                <p class="text-xl mt-4 text-black"><span style="font-size:18px;"><strong>Export as Video:</strong> File
+                        &rarr; Export &rarr; Create a Video &rarr; turns presentation into MP4 ad. </span></p>
+                <!-- Comparison Table -->
+
+                <div class="callout-label mt-10"><span style="font-size:24px;">POSTER vs ANIMATED AD &ndash;
+                        SIDE-BY-SIDE DISSECTION</span></div>
+
+                <table class="mt-6 w-full text-black">
+                    <thead>
+                        <tr class="bg-yellow-100">
+                            <th class="border border-black p-4 font-bold">Feature</th>
+                            <th class="border border-black p-4 font-bold">Static Poster</th>
+                            <th class="border border-black p-4 font-bold">Animated / Video Ad</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="border border-black p-4"><strong>Primary Goal</strong></td>
+                            <td class="border border-black p-4">Instant recognition</td>
+                            <td class="border border-black p-4">Storytelling &amp; Engagement</td>
+                        </tr>
+                        <tr>
+                            <td class="border border-black p-4"><strong>Key Strength</strong></td>
+                            <td class="border border-black p-4">Constant visibility (physical/digital)</td>
+                            <td class="border border-black p-4">High retention &amp; click-through rates</td>
+                        </tr>
+                        <tr>
+                            <td class="border border-black p-4"><strong>Best For</strong></td>
+                            <td class="border border-black p-4">Brand awareness &amp; events</td>
+                            <td class="border border-black p-4">Explaining complex ideas or emotions</td>
+                        </tr>
+                        <tr>
+                            <td class="border border-black p-4"><strong>Focus</strong></td>
+                            <td class="border border-black p-4">Composition &amp; Typography</td>
+                            <td class="border border-black p-4">Timing &amp; Pacing</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- Forms of Advertising Table -->
+
+                <div class="callout-label mt-10"><span style="font-size:24px;">FORMS OF ADVERTISING &ndash; RESOURCE
+                        BLUEPRINT</span></div>
+
+                <table class="mt-6 w-full text-black">
+                    <thead>
+                        <tr class="bg-yellow-100">
+                            <th class="border border-black p-4 font-bold">Form of Advertising</th>
+                            <th class="border border-black p-4 font-bold">What You Can Do</th>
+                            <th class="border border-black p-4 font-bold">Cost / Resources Required</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="border border-black p-4"><strong>Posters</strong></td>
+                            <td class="border border-black p-4">Handmade poster / digital posters</td>
+                            <td class="border border-black p-4">Colours/paper (handmade) or design software (digital)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="border border-black p-4"><strong>Video Advertisement</strong></td>
+                            <td class="border border-black p-4">Make a video / Reel / Act in the advertisement</td>
+                            <td class="border border-black p-4">Video-making camera / mobile phone</td>
+                        </tr>
+                        <tr>
+                            <td class="border border-black p-4"><strong>Labels / Pamphlets / Banner</strong></td>
+                            <td class="border border-black p-4">Hand drawn / using computer</td>
+                            <td class="border border-black p-4">Paper/colours (handmade) or design software (digital)
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- Sidebar – Single Superhero Fact Bubble -->
+
+        <div class="sidebar">
+            <div class="fact-bubble relative"><img alt="Comic Superhero"
+                    class="absolute -top-20 left-1/2 transform -translate-x-1/2 w-32 h-auto"
+                    src="https://login.skillizee.io/s/articles/698abb886ba0c25dd51ec503/images/JEMA GER 1416-19.jpg" />
+                <h4 class="text-3xl font-black text-center mb-4" style="color:#f00; -webkit-text-stroke: 2px #000;">
+                    <span style="font-size:26px;">AD-MAN SAYS:</span>
+                </h4>
+
+                <p class="text-xl leading-relaxed text-center font-bold text-black"><span
+                        style="font-size:18px;">Storyboarding is your secret weapon! Map the beats before touching
+                        software &mdash; it saves hours of frustration and makes your final ad feel like a
+                        blockbuster!</span></p>
+            </div>
+        </div>
+    </div>
+    <!-- Storyboard That Tool Embed – Placed in Key Learnings section -->
+
+    <div class="blueprint-card mt-12 relative" style="background: linear-gradient(to bottom, #fff 0%, #f0f8ff 100%);">
+        <div class="callout-label"
+            style="background: var(--highlight-yellow); color: black; -webkit-text-stroke: 3px black;"><span
+                style="font-size:28px;">TRY IT NOW &ndash; FREE STORYBOARD CREATOR</span></div>
+
+        <p class="text-2xl mt-6 mb-8 text-center text-black font-bold">Jump straight into digital storyboarding with
+            <strong>Storyboard That</strong> &mdash; drag-and-drop characters, scenes, text, and export your campaign
+            blueprint in minutes. Perfect bridge from hand-drawn sketches to pro-level planning!
+        </p>
+
+        <div class="relative w-full overflow-hidden rounded-2xl border-8 border-black shadow-2xl"
+            style="aspect-ratio: 16 / 9; max-height: 620px;">
+            <!-- Fullscreen Toggle Button (matches chapter style) --><button aria-label="Toggle Fullscreen"
+                class="absolute top-4 right-4 z-50 bg-white/80 border-4 border-black rounded-full p-3 shadow-lg hover:bg-white hover:scale-110 transition-all"
+                id="storyboard-fs-btn"><img alt="Enter Fullscreen" class="w-10 h-10" id="storyboard-enter-fs"
+                    src="https://login.skillizee.io/s/articles/6971c474348e12598d489e16/images/fullscreen.png" /> <img alt="Exit Fullscreen"
+                    class="w-10 h-10 hidden" id="storyboard-exit-fs"
+                    src="https://login.skillizee.io/s/articles/6971c474348e12598d489e16/images/exit.png" /></button><!-- Iframe Embed --><iframe
+                allowfullscreen="" class="absolute inset-0 w-full h-full" frameborder="0" id="storyboard-iframe"
+                loading="lazy" src="https://www.storyboardthat.com/storyboard-creator"></iframe>
+        </div>
+
+        <div class="text-center mt-6"><a
+                class="inline-block bg-var(--highlight-pink) text-white font-black text-2xl py-4 px-10 rounded-full border-6 border-black shadow-xl hover:bg-pink-600 transition-all"
+                href="https://www.storyboardthat.com/storyboard-creator" rel="noopener noreferrer"
+                style="-webkit-text-stroke: 2px black; font-family: 'Bangers', cursive;" target="_blank">LAUNCH
+                STORYBOARD THAT &rarr; </a></div>
+    </div>
+    <!-- JavaScript for this embed's fullscreen toggle -->
+    <script>
+        const storyboardFsBtn = document.getElementById('storyboard-fs-btn');
+        const storyboardEnterIcon = document.getElementById('storyboard-enter-fs');
+        const storyboardExitIcon = document.getElementById('storyboard-exit-fs');
+        const storyboardIframeContainer = document.querySelector('#storyboard-iframe').parentElement; // the relative wrapper div
+
+        storyboardFsBtn.addEventListener('click', () => {
+            if (!document.fullscreenElement) {
+                // Request fullscreen on the container (keeps button visible)
+                storyboardIframeContainer.requestFullscreen?.() ||
+                    storyboardIframeContainer.webkitRequestFullscreen?.() ||
+                    storyboardIframeContainer.msRequestFullscreen?.();
+                storyboardEnterIcon.classList.add('hidden');
+                storyboardExitIcon.classList.remove('hidden');
+            } else {
+                document.exitFullscreen?.() ||
+                    document.webkitExitFullscreen?.() ||
+                    document.msExitFullscreen?.();
+                storyboardEnterIcon.classList.remove('hidden');
+                storyboardExitIcon.classList.add('hidden');
+            }
+        });
+
+        // Sync icon state on any fullscreen change
+        document.addEventListener('fullscreenchange', () => {
+            if (document.fullscreenElement) {
+                storyboardEnterIcon.classList.add('hidden');
+                storyboardExitIcon.classList.remove('hidden');
+            } else {
+                storyboardEnterIcon.classList.remove('hidden');
+                storyboardExitIcon.classList.add('hidden');
+            }
+        });
+    </script><!-- Key Learnings -->
+
+    <div class="mt-16 text-center">
+        <div class="text-6xl font-black" style="color:#ff0; -webkit-text-stroke: 6px #000;"><span
+                style="font-size:48px;">KEY LEARNINGS</span></div>
+
+        <div class="grid md:grid-cols-3 gap-8 mt-12">
+            <div class="p-8 bg-white rounded-2xl border-6 border-black shadow-xl">
+                <h4 class="text-3xl font-black text-[#f00]" style="-webkit-text-stroke: 2px #000;"><span
+                        style="font-size:24px;">POSTER = INSTANT IMPACT</span></h4>
+
+                <p class="text-xl mt-4 text-black"><span style="font-size:18px;">Grab attention in &lt;3 seconds with
+                        strong focal point, rule of thirds, emotional colors, max 2 fonts.</span></p>
+            </div>
+
+            <div class="p-8 bg-white rounded-2xl border-6 border-black shadow-xl">
+                <h4 class="text-3xl font-black text-[#00f]" style="-webkit-text-stroke: 2px #000;"><span
+                        style="font-size:24px;">STORYBOARD = MOTION BLUEPRINT</span></h4>
+
+                <p class="text-xl mt-4 text-black"><span style="font-size:18px;">Map hook &rarr; problem &rarr; solution
+                        &rarr; CTA before software. Draw motion arrows to plan timing &amp; pacing.</span></p>
+            </div>
+
+            <div class="p-8 bg-white rounded-2xl border-6 border-black shadow-xl">
+                <h4 class="text-3xl font-black text-[#ff0]" style="-webkit-text-stroke: 2px #000;"><span
+                        style="font-size:24px;">TOOLS = EXECUTION BRIDGE</span></h4>
+
+                <p class="text-xl mt-4 text-black"><span style="font-size:18px;">Canva for quick motion graphics.
+                        PowerPoint Morph = high-end animation cheat code. Export as MP4.</span></p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Simple & Plain Footer -->
+
+<footer class="mt-16 py-6 px-8 text-center bg-black border-t-4 border-gray-700">
+    <p class="text-xl md:text-2xl font-medium text-gray-200">AD-Venture &ndash; Creating an Advertisement</p>
+
+    <p class="mt-1 text-base text-gray-400">skillizee.io</p>
+</footer>
+<script>
+    // Fullscreen toggle
+    const fsBtn = document.getElementById('fullscreen-btn');
+    const enterIcon = document.getElementById('enter-fs-icon');
+    const exitIcon = document.getElementById('exit-fs-icon');
+
+    fsBtn.addEventListener('click', () => {
+        if (!document.fullscreenElement) {
+            document.documentElement.requestFullscreen?.() ||
+                document.documentElement.webkitRequestFullscreen?.() ||
+                document.documentElement.msRequestFullscreen?.();
+            enterIcon.classList.add('hidden');
+            exitIcon.classList.remove('hidden');
+        } else {
+            document.exitFullscreen?.() ||
+                document.webkitExitFullscreen?.() ||
+                document.msExitFullscreen?.();
+            enterIcon.classList.remove('hidden');
+            exitIcon.classList.add('hidden');
+        }
+    });
+
+    document.addEventListener('fullscreenchange', () => {
+        if (document.fullscreenElement) {
+            enterIcon.classList.add('hidden');
+            exitIcon.classList.remove('hidden');
+        } else {
+            enterIcon.classList.remove('hidden');
+            exitIcon.classList.add('hidden');
+        }
+    });
+</script>

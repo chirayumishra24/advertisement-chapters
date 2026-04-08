@@ -1,0 +1,810 @@
+<div>
+    <div>
+        <div>
+            <div>
+                <div>
+                    <div>
+                        <div>
+                            <div>
+                                <div>
+                                    <div>
+                                        <div>
+                                            <div>
+                                                <div>
+                                                    <div>
+                                                        <div>
+                                                            <meta charset="UTF-8">
+                                                            <meta name="viewport"
+                                                                content="width=device-width, initial-scale=1.0">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<title></title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link
+    href="https://fonts.googleapis.com/css2?family=Impact&amp;family=Bangers&amp;family=Comic+Neue:wght@700&amp;display=swap"
+    rel="stylesheet" />
+<link rel="stylesheet" href="responsive.css" />
+<style type="text/css">
+    :root {
+        --dark-bg: #1a1a1a;
+        --charcoal: #2d2d2d;
+        --highlight-yellow: #ffeb3b;
+        --highlight-pink: #ff4081;
+        --highlight-cyan: #00e5ff;
+        --text-light: #f5f5f5;
+        --border-black: #000;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        background: var(--dark-bg);
+        color: var(--text-light);
+        font-family: 'Comic Neue', cursive;
+        background-image:
+            radial-gradient(circle at 10% 20%, rgba(255, 235, 59, 0.08) 0%, transparent 10%),
+            radial-gradient(circle at 90% 80%, rgba(255, 64, 129, 0.08) 0%, transparent 10%);
+        min-height: 100vh;
+    }
+
+    .comic-wrapper {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 2rem 1rem;
+        position: relative;
+    }
+
+    .hero-banner {
+        background: linear-gradient(135deg, #00e5ff 0%, #ffeb3b 50%, #ff4081 100%);
+        border: 12px solid var(--border-black);
+        border-radius: 24px;
+        padding: 3rem 2rem;
+        margin-bottom: 3rem;
+        box-shadow: 12px 12px 0 var(--border-black);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero-title {
+        font-family: 'Bangers', cursive;
+        font-size: 6rem;
+        color: #fff;
+        -webkit-text-stroke: 6px #000;
+        text-shadow: 10px 10px 0 #000;
+        text-align: center;
+        line-height: 0.85;
+        transform: rotate(-3deg);
+        margin: 0;
+    }
+
+    .hero-subtitle {
+        font-family: 'Impact', sans-serif;
+        font-size: 3.5rem;
+        color: var(--highlight-yellow);
+        -webkit-text-stroke: 3px #000;
+        text-align: center;
+        margin-top: -1rem;
+        transform: rotate(4deg);
+    }
+
+    .content-area {
+        display: grid;
+        grid-template-columns: 1fr 300px;
+        gap: 3rem;
+    }
+
+    .main-content {
+        background: var(--charcoal);
+        border: 8px solid #000;
+        border-radius: 20px;
+        padding: 2.5rem;
+        box-shadow: 10px 10px 0 #000;
+    }
+
+    .section-title {
+        font-family: 'Impact', sans-serif;
+        font-size: 3.8rem;
+        color: var(--highlight-pink);
+        -webkit-text-stroke: 4px #000;
+        margin: 2rem 0 1.5rem;
+        text-align: center;
+        transform: rotate(-2deg);
+    }
+
+    .blueprint-card {
+        background: #ffffff;
+        border: 6px solid #000;
+        border-radius: 16px;
+        padding: 2.5rem;
+        margin: 2.5rem 0;
+        box-shadow: 8px 8px 0 #000;
+        color: #000000;
+        transform: none;
+    }
+
+    .callout-label {
+        font-family: 'Bangers', cursive;
+        font-size: 2.2rem;
+        color: #fff;
+        background: var(--highlight-cyan);
+        border: 5px solid #000;
+        border-radius: 999px;
+        padding: 0.6rem 1.5rem;
+        display: inline-block;
+        margin-bottom: 1.5rem;
+        box-shadow: 4px 4px 0 #000;
+        text-align: center;
+    }
+
+    .magazine-image {
+        border: 8px solid #000;
+        border-radius: 16px;
+        box-shadow: 8px 8px 0 #000;
+        margin: 2rem auto;
+        display: block;
+        max-width: 100%;
+    }
+
+    .sidebar {
+        background: var(--charcoal);
+        border: 8px solid #000;
+        border-radius: 20px;
+        padding: 1rem;
+        box-shadow: 10px 10px 0 #000;
+        height: fit-content;
+        position: sticky;
+        top: 2rem;
+    }
+
+    .sidebar h4 {
+        font-family: 'Impact', sans-serif;
+        font-size: 2.2rem;
+        color: var(--highlight-yellow);
+        -webkit-text-stroke: 2px #000;
+        margin-bottom: 1.5rem;
+        text-align: center;
+    }
+
+    .fact-bubble {
+        background: #fff;
+        border: 6px solid #000;
+        border-radius: 50px / 60px;
+        padding: 2rem 1rem;
+        margin: 1.5rem 0;
+        box-shadow: 6px 6px 0 #000;
+        position: relative;
+        color: #000;
+        font-size: 1.3rem;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .fact-bubble img {
+        position: absolute;
+        top: -80px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 120px;
+        height: auto;
+        filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.6));
+        z-index: 10;
+    }
+
+    .fact-bubble::after {
+        content: '';
+        position: absolute;
+        bottom: -30px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 0;
+        border-left: 20px solid transparent;
+        border-right: 20px solid transparent;
+        border-top: 20px solid #000;
+    }
+
+    footer {
+        text-align: center;
+        padding: 4rem 2rem;
+        color: #ccc;
+        font-size: 1.3rem;
+        border-top: 6px double #fff;
+        margin-top: 4rem;
+    }
+
+    #fullscreen-btn {
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+        z-index: 9999;
+        background: rgba(255, 255, 255, 0.7);
+        border: none;
+        border-radius: 50%;
+        padding: 0.8rem;
+        cursor: pointer;
+        transition: all 0.3s;
+    }
+
+    #fullscreen-btn:hover {
+        background: rgba(255, 255, 255, 0.9);
+        transform: scale(1.15);
+    }
+
+    @media (max-width: 1024px) {
+        .content-area {
+            grid-template-columns: 1fr;
+        }
+
+        .sidebar {
+            position: static;
+        }
+
+        .hero-title {
+            font-size: 4.5rem;
+        }
+
+        .hero-subtitle {
+            font-size: 2.8rem;
+        }
+    }
+
+    /* 💥 Comic Modal Styling */
+
+    .comic-modal-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.85);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 99999;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.4s ease;
+    }
+
+    .comic-modal-overlay.active {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .comic-modal {
+        background: linear-gradient(135deg, #ffeb3b, #ff4081);
+        border: 10px solid #000;
+        border-radius: 25px;
+        padding: 3rem 2.5rem;
+        max-width: 500px;
+        text-align: center;
+        box-shadow: 15px 15px 0 #000;
+        transform: scale(0.8) rotate(-2deg);
+        transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .comic-modal-overlay.active .comic-modal {
+        transform: scale(1) rotate(0deg);
+    }
+
+    .comic-modal-title {
+        font-family: 'Bangers', cursive;
+        font-size: 3.5rem;
+        color: white;
+        -webkit-text-stroke: 4px #000;
+        margin-bottom: 1rem;
+    }
+
+    .comic-modal-text {
+        font-size: 1.3rem;
+        font-weight: bold;
+        color: #000;
+        background: #fff;
+        padding: 1.5rem;
+        border: 5px solid #000;
+        border-radius: 15px;
+        margin-bottom: 2rem;
+    }
+
+    .comic-modal-burst {
+        font-family: 'Impact', sans-serif;
+        font-size: 2.5rem;
+        color: #fff;
+        -webkit-text-stroke: 3px #000;
+        margin-bottom: 1.5rem;
+    }
+
+    .comic-modal-btn {
+        background: #000;
+        color: #fff;
+        font-family: 'Impact', sans-serif;
+        font-size: 1.2rem;
+        padding: 0.8rem 2.5rem;
+        border: 4px solid #000;
+        border-radius: 50px;
+        cursor: not-allowed;
+        transition: all 0.2s;
+    }
+
+    .comic-modal-btn:enabled {
+        background: #00e5ff;
+        color: #000;
+        cursor: pointer;
+        transform: scale(1.1);
+    }
+</style>
+<!-- 💥 COMIC STYLE GUIDE MODAL -->
+<div class="comic-modal-overlay" id="comicGuideModal">
+    <div class="comic-modal">
+        <h2 class="comic-modal-title">HEY HERO! 🦸</h2>
+
+        <p class="comic-modal-text">This chapter is designed like a <strong>COMIC BOOK!</strong><br />
+            <br />
+            Scroll down to explore each panel,<br />
+            videos, and expert missions!
+        </p>
+
+        <div class="comic-modal-burst">BOOM! 💥</div>
+        <button class="comic-modal-btn" disabled="disabled" id="comicDismissBtn">Wait (8)</button>
+    </div>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const modal = document.getElementById('comicGuideModal');
+        const btn = document.getElementById('comicDismissBtn');
+
+        let countdown = 8;
+        let interval;
+
+        function startCountdown() {
+            interval = setInterval(() => {
+                countdown--;
+                btn.textContent = `Wait (${countdown})`;
+
+                if (countdown <= 0) {
+                    clearInterval(interval);
+                    btn.textContent = "LET'S GO! 🚀";
+                    btn.disabled = false;
+
+                    // Auto close immediately
+                    closeModal();
+                }
+            }, 1000);
+        }
+
+        function closeModal() {
+            modal.classList.remove('active');
+            setTimeout(() => {
+                modal.style.display = 'none';
+            }, 400);
+        }
+
+        // Show modal after short delay
+        setTimeout(() => {
+            modal.style.display = 'flex';
+            setTimeout(() => modal.classList.add('active'), 50);
+            startCountdown();
+        }, 800);
+
+        btn.addEventListener('click', () => {
+            if (!btn.disabled) closeModal();
+        });
+    });
+</script><!-- Fullscreen Toggle Button -->
+
+<p><button aria-label="Toggle Fullscreen" id="fullscreen-btn"><img alt="Enter Fullscreen" class="w-10 h-10"
+            id="enter-fs-icon" src="https://login.skillizee.io/s/articles/6971c474348e12598d489e16/images/fullscreen.png" /> <img
+            alt="Exit Fullscreen" class="w-10 h-10 hidden" id="exit-fs-icon"
+            src="https://login.skillizee.io/s/articles/6971c474348e12598d489e16/images/exit.png" /></button></p>
+<!-- Hero Banner – Static background image, no animation --><!-- HERO HEADER -->
+
+<div class="hero-banner relative overflow-hidden h-[400px] md:h-[500px] flex items-center justify-center text-center"
+    style="
+        background-image: url('https://login.skillizee.io/s/articles/698abb886ba0c25dd51ec503/images/579576381196.jpg');
+        background-size: cover;
+        background-position: center;
+     "><!-- Overlay -->
+    <div class="absolute inset-0 bg-black/40">&nbsp;</div>
+    <!-- Content -->
+
+    <div class="relative z-10 px-6 py-12 max-w-4xl"><!-- Chapter Title -->
+        <h1 class="text-6xl md:text-8xl lg:text-9xl font-black text-white tracking-tight" style="
+          font-family: Bangers, cursive;
+          -webkit-text-stroke: 5px black;
+          text-shadow: 8px 8px 0 black;
+        "><span style="font-size:72px;">CHAPTER 3.1</span></h1>
+        <!-- Subtitle -->
+
+        <h2 class="mt-6 text-3xl md:text-5xl lg:text-6xl font-bold text-yellow-300 tracking-wide" style="
+          font-family: Impact, sans-serif;
+          -webkit-text-stroke: 2px black;
+          text-shadow: 4px 4px 0 black;
+        "><span style="font-size:48px;">MEETING AN EXPERT &amp; FINDING THE CLIENT</span></h2>
+    </div>
+</div>
+
+<div class="audio-container">
+    <audio controls="" controlslist="nodownload" oncontextmenu="return false;">
+        <source src="https://pa2-cmd.github.io/Advertisement/3.1.mp3" type="audio/mp3" /> Your browser does not support
+        the audio element.
+    </audio>
+</div>
+<style type="text/css">
+    .audio-container {
+        position: relative;
+        background: url('https://login.skillizee.io/s/articles/698c30d80aff9e72a7604c2b/images/Subtitle(1).gif') center center no-repeat;
+        background-size: contain;
+        /* keeps the GIF's aspect ratio */
+        border-radius: 16px;
+        box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+        margin: 1rem auto;
+        width: 90%;
+        max-width: 900px;
+        aspect-ratio: 1920 / 1080;
+        /* maintain original proportion */
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    /* Modern styled audio */
+    .audio-container audio {
+        width: 100%;
+        border-radius: 12px;
+        border: 2px solid #2D2B7E;
+        background: #F5F5FF;
+        height: 50px;
+        padding: 4px;
+        box-shadow: 0 3px 10px rgba(45, 43, 126, 0.3);
+    }
+
+    /* Lavender-toned player controls */
+    audio::-webkit-media-controls-panel {
+        background-color: #E6E6FA;
+        border-radius: 12px;
+    }
+
+    audio::-webkit-media-controls-play-button,
+    audio::-webkit-media-controls-timeline,
+    audio::-webkit-media-controls-current-time-display,
+    audio::-webkit-media-controls-time-remaining-display,
+    audio::-webkit-media-controls-volume-slider {
+        filter: hue-rotate(240deg) saturate(1.2);
+    }
+</style>
+<div class="content-area"><!-- Main Content -->
+    <div class="main-content"><!-- Intro -->
+        <div class="blueprint-card">
+            <div class="callout-label"><span style="font-size:24px;">CORE PRINCIPLE</span></div>
+
+            <p class="text-2xl leading-relaxed text-black"><span style="font-size:18px;">Moving from theory to
+                    real-world advertising needs a PRO + ETHICAL mindset.<br />
+                    <br />
+                    Behind every brand is a REAL PERSON with a REAL BUSINESS to run.</span></p>
+        </div>
+        <!-- 1. Meeting an Expert -->
+
+        <h2 class="section-title"><span style="font-size:36px;">1. MEETING AN EXPERT</span></h2>
+
+        <div class="blueprint-card">
+            <div class="callout-label"><span style="font-size:24px;">WHY IT MATTERS</span></div>
+
+            <p class="text-xl mb-6 text-black"><span style="font-size:18px;">Learn from pros before you start creating
+                    &mdash; understand real industry standards!</span></p>
+
+            <div class="flex flex-col md:flex-row gap-6 md:gap-8 mb-8"><!-- Video container – forced 9:16 ratio -->
+                <div class="w-full md:w-5/12 flex-shrink-0">
+                    <div class="relative w-full pt-[177.78%] md:pt-[177.78%] overflow-hidden rounded-lg shadow-md">
+                        <!-- 16/9 = 177.78% for 9:16 --><iframe allowfullscreen=""
+                            class="absolute top-0 left-0 w-full h-full" frameborder="0" scrolling="no"
+                            src="https://www.youtube.com/embed/xIfxPgMKCyc?rel=0"></iframe></div>
+                </div>
+                <!-- Text / list – takes remaining space on desktop -->
+
+                <div class="w-full md:w-7/12">
+                    <ul class="space-y-4 text-xl pl-6 md:pl-2 list-disc text-black">
+                        <li><span style="font-size:18px;"><strong>Mentorship:</strong> Agency heads &amp; seniors teach
+                                the real rules (clients, pricing, trends).</span></li>
+                        <li><span style="font-size:18px;"><strong>Local makers:</strong> Billboard &amp; pamphlet
+                                creators = real execution knowledge.</span></li>
+                        <li><span style="font-size:18px;"><strong>Shopkeepers &amp; exhibitors:</strong> Direct
+                                community pulse.</span></li>
+                        <li><span style="font-size:18px;"><strong>Business teachers:</strong> Structured strategy
+                                view.</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <img alt="Expert Meeting" class="magazine-image w-full rounded-lg mb-6 shadow-sm"
+            src="https://login.skillizee.io/s/articles/69895dd44fd3ff50c003dba7/images/image-20260209093958-1.png" /> <!-- Questions -->
+        <div class="blueprint-card">
+            <div class="callout-label"><span style="font-size:24px;">QUESTIONS TO ASK EXPERTS</span></div>
+
+            <ol class="space-y-6 list-decimal pl-8 text-xl text-black">
+                <li><span style="font-size:18px;">What makes an ad interesting &amp; memorable?</span></li>
+                <li><span style="font-size:18px;">Why spend so much money on ads? What effect on audiences?
+                        (examples!)</span></li>
+                <li><span style="font-size:18px;">How do you choose the medium (print, radio, TV,
+                        social&hellip;)?</span></li>
+                <li><span style="font-size:18px;">What problems / disadvantages do ads have?</span></li>
+            </ol>
+        </div>
+        <!-- 2. Finding the Client -->
+
+        <h2 class="section-title"><span style="font-size:36px;">2. FINDING THE CLIENT &ndash; MAP YOUR LOCAL
+                SCENE</span></h2>
+
+        <div class="blueprint-card">
+            <div class="callout-label"><span style="font-size:24px;">START HERE</span></div>
+
+            <p class="text-xl mb-6 text-black"><span style="font-size:18px;">Look at your own community first. Many
+                    small businesses have great products but no strong visual/verbal identity yet.</span></p>
+            <img alt="Client Map" class="magazine-image"
+                src="https://login.skillizee.io/s/articles/69895dd44fd3ff50c003dba7/images/image-20260209093958-2.png" />
+            <div class="callout-label mt-6"><span style="font-size:24px;">Look for these types</span></div>
+
+            <ul class="space-y-4 text-xl pl-8 list-disc text-black">
+                <li><span style="font-size:18px;"><strong>The Maker:</strong> Bamboo craftsman / tailor &mdash; quality
+                        &amp; heritage focus</span></li>
+                <li><span style="font-size:18px;"><strong>The Provider:</strong> Local baker / florist &mdash; freshness
+                        &amp; community love</span></li>
+            </ul>
+        </div>
+        <!-- Questionnaire -->
+
+        <div class="blueprint-card">
+            <div class="callout-label"><span style="font-size:24px;">RESEARCH QUESTIONNAIRE</span></div>
+
+            <ol class="space-y-6 list-decimal pl-8 text-xl text-black">
+                <li><span style="font-size:18px;">What&rsquo;s the unique story of your business? Why did you choose
+                        this one? (2&ndash;3 reasons)</span></li>
+                <li><span style="font-size:18px;">Who is your typical customer? (age, location, needs)</span></li>
+                <li><span style="font-size:18px;">What feeling do you want when people hear your name?</span></li>
+                <li><span style="font-size:18px;">Who are your main local competitors?</span></li>
+            </ol>
+        </div>
+        <!-- 3. Partnership & Ethics -->
+
+        <h2 class="section-title"><span style="font-size:36px;">3. THE PARTNERSHIP &ndash; ETHICS &amp; CONTRACTS</span>
+        </h2>
+
+        <div class="blueprint-card">
+            <div class="callout-label"><span style="font-size:24px;">CORE IDEA</span></div>
+
+            <p class="text-xl mb-6 text-black"><span style="font-size:18px;">Professionalism = clear communication +
+                    safety. You&rsquo;re not doing a favor &mdash; you&rsquo;re entering a REAL partnership.</span></p>
+
+            <div class="callout-label mt-6"><span style="font-size:24px;">Pitch Like a Pro</span></div>
+
+            <p class="text-lg text-black"><span style="font-size:18px;">&ldquo;I want to help your business reach more
+                    people with a consistent visual identity and emotional hook that builds trust.&rdquo;</span></p>
+
+            <div class="callout-label mt-6"><span style="font-size:24px;">WHY CONTRACTS MATTER</span></div>
+
+            <p class="text-lg mb-4 text-black"><span style="font-size:18px;">A contract protects both sides &mdash;
+                    turns you from &ldquo;student&rdquo; into &ldquo;consultant&rdquo;.</span></p>
+
+            <div class="bg-white border-4 border-black rounded-2xl p-8 mt-6">
+                <h4 class="text-3xl font-black text-center mb-6" style="color:#f00;"><span
+                        style="font-size:24px;">SIMPLE CONTRACT TEMPLATE</span></h4>
+
+                <p class="text-xl leading-relaxed text-center text-black"><span style="font-size:18px;">I, <input
+                            class="border-b-4 border-black w-48 text-center mx-2 bg-transparent text-black"
+                            placeholder="your name" type="text" /> (owner) of <input
+                            class="border-b-4 border-black w-64 text-center mx-2 bg-transparent text-black"
+                            placeholder="e.g. bakery" type="text" /> agree to work with Grade 8 students from <input
+                            class="border-b-4 border-black w-64 text-center mx-2 bg-transparent text-black"
+                            placeholder="school name" type="text" /> at <input
+                            class="border-b-4 border-black w-64 text-center mx-2 bg-transparent text-black"
+                            placeholder="school address" type="text" /> to create an advertisement for my
+                        business.</span></p>
+
+                <p class="font-black text-2xl mt-10 mb-6 text-center text-black"><span style="font-size:18px;">We agree
+                        on:</span></p>
+
+                <ul class="space-y-4 pl-10 list-disc text-xl text-black">
+                    <li><span style="font-size:18px;">Students can photograph product/owner with approval.</span></li>
+                    <li><span style="font-size:18px;">Mutually agreed dates &amp; times for info sharing.</span></li>
+                    <li><span style="font-size:18px;">Regular progress updates to owner.</span></li>
+                    <li><span style="font-size:18px;">All interaction in presence of teacher/parent.</span></li>
+                </ul>
+
+                <div class="flex justify-between mt-12 pt-8 border-t-4 border-black">
+                    <div class="text-center w-5/12">
+                        <p class="font-black text-xl mb-4 text-black"><span style="font-size:18px;">Student / Group
+                                Signature</span></p>
+
+                        <div class="border-b-4 border-black h-12">&nbsp;</div>
+                    </div>
+
+                    <div class="text-center w-5/12">
+                        <p class="font-black text-xl mb-4 text-black"><span style="font-size:18px;">Business Owner
+                                Signature</span></p>
+
+                        <div class="border-b-4 border-black h-12">&nbsp;</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button onclick="downloadAsWord()"
+            style="margin: 20px auto; padding: 12px 24px; font-size: 18px; font-weight: bold; background: #0066cc; color: white; border: none; border-radius: 6px; cursor: pointer; display: block;"
+            type="button">Download as Word (.doc)</button>
+    </div>
+    <!-- Sidebar – Single Superhero Fact Bubble -->
+
+    <div class="sidebar">
+        <div class="fact-bubble"><img alt="Comic Superhero" class="w-32 h-auto mx-auto mb-6 drop-shadow-2xl"
+                src="https://login.skillizee.io/s/articles/698abb886ba0c25dd51ec503/images/JEMA GER 1416-19.jpg" />
+            <h4 class="text-3xl font-black text-center mb-4" style="color:#f00; -webkit-text-stroke: 2px #000;"><span
+                    style="font-size:26px;">AD-MAN SAYS:</span></h4>
+
+            <p class="text-xl leading-relaxed text-center font-bold text-black"><span style="font-size:18px;">Before
+                    contracts existed, many early designers got ZERO payment after doing full work! A contract is your
+                    INVISIBLE SHIELD &mdash; turn &ldquo;student favor&rdquo; into REAL pro protection!</span></p>
+        </div>
+    </div>
+</div>
+<!-- Key Learnings -->
+
+<div class="mt-16 text-center">
+    <div class="text-6xl font-black" style="color:#ff0; -webkit-text-stroke: 6px #000;"><span
+            style="font-size:48px;">KEY LEARNINGS</span></div>
+
+    <div class="grid md:grid-cols-3 gap-8 mt-12">
+        <div class="p-8 bg-white rounded-2xl border-6 border-black shadow-xl">
+            <h4 class="text-3xl font-black text-[#f00]" style="-webkit-text-stroke: 2px #000;"><span
+                    style="font-size:26px;">RESEARCH FIRST</span></h4>
+
+            <p class="text-xl mt-4 text-black"><span style="font-size:18px;">No info = no good design. Know your baker
+                    before the logo!</span></p>
+        </div>
+
+        <div class="p-8 bg-white rounded-2xl border-6 border-black shadow-xl">
+            <h4 class="text-3xl font-black text-[#00f]" style="-webkit-text-stroke: 2px #000;"><span
+                    style="font-size:26px;">LOCAL = POWER</span></h4>
+
+            <p class="text-xl mt-4 text-black"><span style="font-size:18px;">Small stories (bamboo craftsman) =
+                    strongest emotional hooks today.</span></p>
+        </div>
+
+        <div class="p-8 bg-white rounded-2xl border-6 border-black shadow-xl">
+            <h4 class="text-3xl font-black text-[#ff0]" style="-webkit-text-stroke: 2px #000;"><span
+                    style="font-size:26px;">CONTRACT = SUPERPOWER</span></h4>
+
+            <p class="text-xl mt-4 text-black"><span style="font-size:18px;">Turns &ldquo;student favor&rdquo; into real
+                    pro work. Protects everyone.</span></p>
+        </div>
+    </div>
+</div>
+<!-- Sleek Comic Footer --><!-- Sleek Comic Footer with Black Background --><!-- Simple & Plain Footer -->
+
+<footer class="mt-16 py-6 px-8 text-center bg-black border-t-4 border-gray-700">
+    <p class="text-xl md:text-2xl font-medium text-gray-200">AD-Venture &ndash; Creating an Advertisement</p>
+
+    <p class="mt-1 text-base text-gray-400">skillizee.io</p>
+</footer>
+<script>
+    // Fullscreen toggle
+    const fsBtn = document.getElementById('fullscreen-btn');
+    const enterIcon = document.getElementById('enter-fs-icon');
+    const exitIcon = document.getElementById('exit-fs-icon');
+
+    fsBtn.addEventListener('click', () => {
+        if (!document.fullscreenElement) {
+            document.documentElement.requestFullscreen?.() ||
+                document.documentElement.webkitRequestFullscreen?.() ||
+                document.documentElement.msRequestFullscreen?.();
+            enterIcon.classList.add('hidden');
+            exitIcon.classList.remove('hidden');
+        } else {
+            document.exitFullscreen?.() ||
+                document.webkitExitFullscreen?.() ||
+                document.msExitFullscreen?.();
+            enterIcon.classList.remove('hidden');
+            exitIcon.classList.add('hidden');
+        }
+    });
+
+    document.addEventListener('fullscreenchange', () => {
+        if (document.fullscreenElement) {
+            enterIcon.classList.add('hidden');
+            exitIcon.classList.remove('hidden');
+        } else {
+            enterIcon.classList.remove('hidden');
+            exitIcon.classList.add('hidden');
+        }
+    });
+</script>
+<script>
+    function downloadAsWord() {
+        const filename = "Simple_Contract_Template.doc";
+
+        // Clone the main container so we don't modify the live page
+        const container = document.querySelector('.bg-white.border-4');
+        const clone = container.cloneNode(true);
+
+        // Find all <input> elements in the clone and set their value as text
+        const inputs = clone.querySelectorAll('input[type="text"]');
+        inputs.forEach(input => {
+            // Create a text node with the current value (or placeholder if empty)
+            const displayValue = input.value.trim() || input.placeholder || '';
+
+            // Replace the <input> with plain text (styled to look similar)
+            const textSpan = document.createElement('span');
+            textSpan.textContent = displayValue;
+            textSpan.style.borderBottom = '4px solid black';
+            textSpan.style.padding = '0 4px';
+            textSpan.style.minWidth = '100px';
+            textSpan.style.display = 'inline-block';
+            textSpan.style.textAlign = 'center';
+
+            input.parentNode.replaceChild(textSpan, input);
+        });
+
+        // Now get the modified HTML
+        const content = clone.outerHTML;
+
+        const style = `
+        <style>
+            body { font-family: Arial, sans-serif; margin: 20px; }
+            h4  { color: #f00; text-align: center; font-size: 24px; margin-bottom: 20px; }
+            p   { text-align: center; line-height: 1.6; font-size: 18px; }
+            ul  { text-align: left; margin: 20px 0 20px 60px; font-size: 18px; }
+            li  { margin-bottom: 12px; }
+            .border-b-4 { border-bottom: 4px solid black; }
+            .border-t-4 { border-top: 4px solid black; }
+            .border-4   { border: 4px solid black; }
+            .flex { display: flex; }
+            .justify-between { justify-content: space-between; }
+            .mt-12 { margin-top: 48px; }
+            .pt-8  { padding-top: 32px; }
+            .w-5/12 { width: 41.666%; }
+            .text-center { text-align: center; }
+            .font-black { font-weight: bold; }
+            .text-xl { font-size: 18px; }
+            .text-2xl { font-size: 24px; }
+            .text-3xl { font-size: 30px; }
+            span[style*="font-size:18px"] { font-size: 18px; }
+            span[style*="font-size:24px"] { font-size: 24px; }
+        </style>
+    `;
+
+        const bom = '\uFEFF';
+
+        const html = `
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="utf-8">
+            ${style}
+        </head>
+        <body>
+            ${content}
+        </body>
+        </html>
+    `;
+
+        const blob = new Blob([bom + html], { type: 'application/msword' });
+        const url = URL.createObjectURL(blob);
+
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = filename;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        URL.revokeObjectURL(url);
+    }
+</script>

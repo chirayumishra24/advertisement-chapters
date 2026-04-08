@@ -1,0 +1,592 @@
+<div>
+    <div>
+        <div>
+            <div>
+                <div>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<title></title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400&amp;family=Inter:wght@300;400;500;600;700&amp;family=Poppins:wght@500;700&amp;display=swap"
+    rel="stylesheet" />
+<link rel="stylesheet" href="responsive.css" />
+<style type="text/css">
+    :root {
+        --feed-gold: #c9a96e;
+        --feed-coral: #c0266f;
+        --feed-navy: #0f172a;
+        --feed-ivory: #fdfbf7;
+        --feed-gray: #475569;
+        --feed-border: #d4af37;
+    }
+
+    body {
+        font-family: 'Inter', sans-serif;
+        background: linear-gradient(to bottom, #fdfbf7, #f8f1e9);
+        color: var(--feed-navy);
+        margin: 0;
+        padding: 0;
+        line-height: 1.75;
+        font-size: 18px !important;
+    }
+
+    .feed-container {
+        max-width: 1450px;
+        margin: 0 auto;
+        padding: 4rem 3rem 6rem;
+        background: var(--feed-ivory);
+        box-shadow: 0 20px 80px rgba(0, 0, 0, 0.08);
+    }
+
+    .feed-header {
+        text-align: center;
+        margin-bottom: 5rem;
+        position: relative;
+    }
+
+    .chapter-title {
+        font-family: 'Playfair Display', serif;
+        font-size: 48px !important;
+        font-weight: 900;
+        color: var(--feed-coral);
+        margin: 0 0 0.8rem;
+    }
+
+    .chapter-subtitle {
+        font-size: 2rem;
+        color: var(--feed-navy);
+        font-weight: 600;
+    }
+
+    /* Social Media Post Styles */
+    .social-post {
+        background: white;
+        border-radius: 16px;
+        margin: 3rem 0;
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.07);
+        overflow: hidden;
+        border: 1px solid rgba(201, 169, 110, 0.12);
+    }
+
+    .post-header {
+        display: flex;
+        align-items: center;
+        padding: 1.2rem 1.5rem;
+        background: linear-gradient(to right, #fdfbf7, rgba(201, 169, 110, 0.05));
+        border-bottom: 1px solid rgba(201, 169, 110, 0.15);
+    }
+
+    .post-avatar {
+        width: 48px;
+        height: 48px;
+        border-radius: 999px;
+        background: var(--feed-gold);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Playfair Display', serif;
+        font-size: 1.4rem;
+        font-weight: bold;
+        color: white;
+        margin-right: 1rem;
+        box-shadow: 0 4px 12px rgba(201, 169, 110, 0.3);
+    }
+
+    .post-meta {
+        flex: 1;
+    }
+
+    .post-author {
+        font-weight: 700;
+        font-size: 1.1rem;
+    }
+
+    .post-time {
+        font-size: 0.9rem;
+        color: var(--feed-gray);
+    }
+
+    .post-content {
+        padding: 1.5rem;
+    }
+
+    .post-title {
+        font-family: 'Playfair Display', serif;
+        font-size: 30px !important;
+        font-weight: 800;
+        color: var(--feed-navy);
+        margin-bottom: 1.2rem;
+    }
+
+    /* Center-aligned & larger YouTube videos */
+    .video-wrapper {
+        position: relative;
+        padding-bottom: 65%;
+        /* taller ~16:10 ratio */
+        height: 0;
+        margin: 2.5rem auto;
+        max-width: 1100px;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+        border: 2px solid var(--feed-gold);
+    }
+
+    .video-wrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        height: 100%;
+        border: 0;
+    }
+
+    /* Center-aligned images */
+    .post-image,
+    .magazine-image {
+        display: block;
+        margin: 2rem auto;
+        max-width: 90%;
+        border-radius: 12px;
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+        border: 1px solid rgba(201, 169, 110, 0.1);
+    }
+
+    /* Twitter/X style – text-only */
+    .twitter-post .post-content {
+        font-size: 18px !important;
+        padding: 1.5rem 2rem;
+    }
+
+    .twitter-actions {
+        display: flex;
+        justify-content: space-around;
+        padding: 1rem;
+        border-top: 1px solid rgba(201, 169, 110, 0.15);
+        color: var(--feed-gray);
+        font-size: 1.1rem;
+    }
+
+    /* Instagram style – text + image */
+    .instagram-post .instagram-caption {
+        padding: 1.2rem 1.5rem;
+        font-size: 18px !important;
+    }
+
+    .insta-actions {
+        display: flex;
+        gap: 1.5rem;
+        padding: 0.8rem 1.5rem;
+        border-top: 1px solid rgba(201, 169, 110, 0.15);
+    }
+
+    .key-feed {
+        background: white;
+        border-radius: 20px;
+        padding: 4.5rem 3.5rem;
+        margin: 6rem auto 0;
+        max-width: 1450px;
+        box-shadow: 0 20px 70px rgba(201, 169, 110, 0.12);
+        border: 2px solid rgba(201, 169, 110, 0.2);
+    }
+
+    .key-feed h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 48px !important;
+        color: var(--feed-gold);
+        text-align: center;
+        margin-bottom: 3.5rem;
+    }
+
+    footer {
+        text-align: center;
+        padding: 6rem 2rem 4rem;
+        color: var(--feed-gray);
+        font-size: 1.2rem;
+        border-top: 2px solid var(--feed-gold);
+        background: linear-gradient(to top, rgba(253, 251, 247, 0.95), white);
+    }
+</style>
+<!-- Full-Screen Toggle Button – Magazine Style -->
+<p><button aria-label="Toggle Fullscreen"
+        class="fixed top-8 right-8 z-[9999] p-4 rounded-2xl bg-white/80 backdrop-blur-xl border border-white/40 shadow-lg hover:shadow-2xl hover:scale-110 transition-all duration-300 flex items-center justify-center group"
+        id="fullscreen-btn"
+        style="box-shadow: 0 10px 30px rgba(0,109,119,0.15); border: 1px solid rgba(202,138,4,0.2);"><!-- Enter Fullscreen Icon --><img
+            alt="Enter fullscreen"
+            class="w-9 h-9 object-contain transition-all duration-300 group-hover:scale-110 group-hover:rotate-6"
+            id="enter-fs-icon" src="https://login.skillizee.io/s/articles/6971c474348e12598d489e16/images/fullscreen.png" />
+        <!-- Exit Fullscreen Icon (hidden by default) --> <img alt="Exit fullscreen"
+            class="w-9 h-9 object-contain transition-all duration-300 hidden group-hover:scale-110 group-hover:rotate-[-6deg]"
+            id="exit-fs-icon"
+            src="https://login.skillizee.io/s/articles/6971c474348e12598d489e16/images/exit.png" /></button><!-- JavaScript (same as your existing one – just connect the IDs) -->
+    <script>
+        const fsBtn = document.getElementById('fullscreen-btn');
+        const enterIcon = document.getElementById('enter-fs-icon');
+        const exitIcon = document.getElementById('exit-fs-icon');
+
+        fsBtn.addEventListener('click', () => {
+            if (!document.fullscreenElement) {
+                // Enter fullscreen
+                if (document.documentElement.requestFullscreen) {
+                    document.documentElement.requestFullscreen();
+                } else if (document.documentElement.webkitRequestFullscreen) {
+                    document.documentElement.webkitRequestFullscreen();
+                } else if (document.documentElement.msRequestFullscreen) {
+                    document.documentElement.msRequestFullscreen();
+                }
+                enterIcon.classList.add('hidden');
+                exitIcon.classList.remove('hidden');
+            } else {
+                // Exit fullscreen
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                } else if (document.webkitExitFullscreen) {
+                    document.webkitExitFullscreen();
+                } else if (document.msExitFullscreen) {
+                    document.msExitFullscreen();
+                }
+                enterIcon.classList.remove('hidden');
+                exitIcon.classList.add('hidden');
+            }
+        });
+
+        // Sync icons when fullscreen changes (Esc key, etc.)
+        document.addEventListener('fullscreenchange', () => {
+            if (document.fullscreenElement) {
+                enterIcon.classList.add('hidden');
+                exitIcon.classList.remove('hidden');
+            } else {
+                enterIcon.classList.remove('hidden');
+                exitIcon.classList.add('hidden');
+            }
+        });
+    </script>
+</p>
+
+<div class="feed-container">
+    <div class="feed-header">
+        <h1 class="chapter-title">Chapter 4.2</h1>
+
+        <div class="chapter-subtitle">Advertising for Social Good</div>
+    </div>
+
+    <div class="audio-container">
+        <audio controls="" controlslist="nodownload" oncontextmenu="return false;">
+            <source src="https://pa2-cmd.github.io/Advertisement/4.2.mp3" type="audio/mp3" /> Your browser does not
+            support the audio element.
+        </audio>
+    </div>
+    <style type="text/css">
+        .audio-container {
+            position: relative;
+            background: url('https://login.skillizee.io/s/articles/698c30d80aff9e72a7604c2b/images/Subtitle(1).gif') center center no-repeat;
+            background-size: contain;
+            /* keeps the GIF's aspect ratio */
+            border-radius: 16px;
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+            margin: 1rem auto;
+            width: 90%;
+            max-width: 900px;
+            aspect-ratio: 1920 / 1080;
+            /* maintain original proportion */
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 1rem;
+            padding-bottom: 1rem;
+        }
+
+        /* Modern styled audio */
+        .audio-container audio {
+            width: 100%;
+            border-radius: 12px;
+            border: 2px solid #2D2B7E;
+            background: #F5F5FF;
+            height: 50px;
+            padding: 4px;
+            box-shadow: 0 3px 10px rgba(45, 43, 126, 0.3);
+        }
+
+        /* Lavender-toned player controls */
+        audio::-webkit-media-controls-panel {
+            background-color: #E6E6FA;
+            border-radius: 12px;
+        }
+
+        audio::-webkit-media-controls-play-button,
+        audio::-webkit-media-controls-timeline,
+        audio::-webkit-media-controls-current-time-display,
+        audio::-webkit-media-controls-time-remaining-display,
+        audio::-webkit-media-controls-volume-slider {
+            filter: hue-rotate(240deg) saturate(1.2);
+        }
+    </style>
+    <!-- Intro – Twitter-style text post -->
+    <div class="social-post twitter-post">
+        <div class="post-header">
+            <div class="post-avatar">AD</div>
+
+            <div class="post-meta">
+                <div class="post-author">Advertising Gazette</div>
+
+                <div class="post-time">Feb 9, 2026 &bull; Pinned</div>
+            </div>
+        </div>
+
+        <div class="post-content">
+            <div class="post-title">Advertising for Social Good</div>
+
+            <p>In today&rsquo;s media landscape, advertising has evolved beyond selling products to advocating for
+                social change and inclusivity.<br />
+                <br />
+                This shift ensures that messages reach every corner of society &mdash; including marginalized groups and
+                the differently-abled (Divyangjan).
+            </p>
+        </div>
+
+        <div class="twitter-actions"><span>❤️ 3.4K</span> <span>🔁 892</span> <span>💬 214</span></div>
+    </div>
+    <!-- 1. Nukkad Nataks – Instagram-style with images -->
+
+    <div class="social-post instagram-post">
+        <div class="post-header">
+            <div class="post-avatar">AD</div>
+
+            <div class="post-meta">
+                <div class="post-author">Advertising Gazette</div>
+
+                <div class="post-time">Feb 9, 2026 &bull; Featured</div>
+            </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-4"><img alt="Nukkad Natak 1" class="post-image"
+                src="https://login.skillizee.io/s/articles/69897fcf4f94cd1ab8c4f6a9/images/unnamed (53).jpg"
+                style="width: 2438px; height: 1568px;" /> <img alt="Nukkad Natak 2" class="post-image"
+                src="https://login.skillizee.io/s/articles/69897fcf4f94cd1ab8c4f6a9/images/unnamed (54).jpg"
+                style="width: 2364px; height: 1520px;" /></div>
+
+        <div class="instagram-caption">
+            <div class="post-title">1. Nukkad Nataks: The Original Viral Advertising</div>
+
+            <p class="mb-6">Street plays are one of India&rsquo;s oldest and most effective &ldquo;advertising&rdquo;
+                tools for social causes.<br />
+                <br />
+                Unlike a TV ad you can skip, a Nukkad Natak happens right in your space &mdash; marketplaces, street
+                corners, parks &mdash; impossible to ignore.
+            </p>
+
+            <h4 class="text-xl font-bold text-[var(--feed-gold)] mb-4">Key Techniques Used:</h4>
+
+            <ul class="space-y-3 text-lg pl-8 list-disc">
+                <li><strong>High Energy &amp; Catchy Jingles:</strong> Loud rhythmic chanting + drums = instant
+                    attention (like a brand sonic logo)</li>
+                <li><strong>Satire and Humor:</strong> Laugh at bad habits &rarr; sting of realization</li>
+                <li><strong>Call to Action (CTA):</strong> Ends with direct appeal (&ldquo;Keep your street
+                    clean&rdquo;, &ldquo;Take pride in your monument&rdquo;)</li>
+                <li><strong>Interactive Engagement:</strong> Actors break the fourth wall &rarr; turn viewers into
+                    participants</li>
+            </ul>
+        </div>
+
+        <div class="insta-actions"><span>❤️ 4.8K</span> <span>💬 312</span> <span>🔗 Share</span></div>
+    </div>
+    <!-- 2. Inclusive Design – Instagram-style with image -->
+
+    <div class="social-post instagram-post">
+        <div class="post-header">
+            <div class="post-avatar">AD</div>
+
+            <div class="post-meta">
+                <div class="post-author">Advertising Gazette</div>
+
+                <div class="post-time">Feb 9, 2026 &bull; Impact Series</div>
+            </div>
+        </div>
+        <img alt="Braille in Advertising" class="post-image"
+            src="https://login.skillizee.io/s/articles/69897fcf4f94cd1ab8c4f6a9/images/unnamed (55).jpg" style="width: 2620px; height: 1520px;" />
+        <div class="instagram-caption">
+            <div class="post-title">2. Inclusive Design: Advertising for All</div>
+
+            <p class="mb-6">Inclusive design creates ads accessible to everyone &mdash; regardless of physical or
+                cognitive abilities.<br />
+                <br />
+                For Divyangjan, this means going beyond visual/auditory-only content.
+            </p>
+
+            <h4 class="text-xl font-bold text-[var(--feed-gold)] mb-4">A. Braille in Advertising</h4>
+
+            <p class="mb-4">For the visually impaired, traditional billboards are invisible. Inclusive brands are
+                experimenting with:</p>
+
+            <ul class="space-y-3 text-lg pl-8 list-disc">
+                <li><strong>Tactile Posters:</strong> Raised textures + Braille text &rarr; message &ldquo;read&rdquo;
+                    by touch</li>
+                <li><strong>Product Packaging:</strong> Brands like Kellogg&rsquo;s &amp; Mastercard use touch cards /
+                    high-contrast codes</li>
+            </ul>
+
+            <h4 class="text-xl font-bold text-[var(--feed-coral)] mt-8 mb-4">B. Sign Language &amp; Audio Features</h4>
+
+            <ul class="space-y-3 text-lg pl-8 list-disc">
+                <li><strong>Sign Language Interpreters:</strong> Picture-in-Picture window with professional signer</li>
+                <li><strong>Closed Captioning (CC):</strong> Essential text overlays for deaf community</li>
+                <li><strong>Audio Description:</strong> Secondary audio track describes visuals during dialogue gaps
+                </li>
+            </ul>
+
+            <h4 class="text-xl font-bold text-[var(--feed-teal)] mt-8 mb-4">Examples of Inclusive Elements</h4>
+
+            <div class="overflow-x-auto mt-6">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="bg-gray-100">
+                            <th class="p-4 border border-gray-300">Feature</th>
+                            <th class="p-4 border border-gray-300">Target Group</th>
+                            <th class="p-4 border border-gray-300">Benefit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="p-4 border border-gray-300">Braille/Tactile</td>
+                            <td class="p-4 border border-gray-300">Visually Impaired</td>
+                            <td class="p-4 border border-gray-300">Enables reading through touch</td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 border border-gray-300">Sign Language</td>
+                            <td class="p-4 border border-gray-300">Hearing Impaired</td>
+                            <td class="p-4 border border-gray-300">Provides natural language communication</td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 border border-gray-300">High Contrast</td>
+                            <td class="p-4 border border-gray-300">Low Vision/Color Blind</td>
+                            <td class="p-4 border border-gray-300">Makes text and shapes easier to distinguish</td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 border border-gray-300">Voice Commands</td>
+                            <td class="p-4 border border-gray-300">Dexterity Issues</td>
+                            <td class="p-4 border border-gray-300">Allows hands-free interaction with ads</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="insta-actions"><span>❤️ 5.1K</span> <span>💬 421</span> <span>🔗 Share</span></div>
+    </div>
+    <!-- Why This Matters – Twitter-style text post -->
+
+    <div class="social-post twitter-post">
+        <div class="post-header">
+            <div class="post-avatar">AD</div>
+
+            <div class="post-meta">
+                <div class="post-author">Advertising Gazette</div>
+
+                <div class="post-time">Feb 9, 2026 &bull; Impact</div>
+            </div>
+        </div>
+
+        <div class="post-content">
+            <div class="post-title">Why This Matters</div>
+
+            <p>When advertising embraces social good and inclusivity, it stops being just a commercial tool.<br />
+                <br />
+                It becomes a force for community building &mdash; ensuring &ldquo;pride in heritage&rdquo; or
+                &ldquo;cleanliness drives&rdquo; are shared responsibilities for every citizen.
+            </p>
+        </div>
+
+        <div class="twitter-actions"><span>❤️ 6.7K</span> <span>🔁 1.2K</span> <span>💬 534</span></div>
+    </div>
+</div>
+<!-- Key Learnings – Feed-style comment thread -->
+
+<div class="key-feed">
+    <h2 class="text-6xl font-black text-center mb-16" style="color:var(--feed-gold);">Pinned Lessons &bull; Social Good
+        Edition</h2>
+
+    <div class="feed-grid">
+        <div class="feed-item">
+            <div class="post-header" style="padding:1rem;">
+                <div class="post-avatar" style="width:40px;height:40px;font-size:1.1rem;">1</div>
+
+                <div class="post-meta">
+                    <div class="post-author">Advertising Gazette</div>
+
+                    <div class="post-time">Pinned &bull; 1h ago</div>
+                </div>
+            </div>
+
+            <div class="post-content">
+                <h4 style="font-size:30px; font-weight:900; color:var(--feed-gold); margin-bottom:1rem;">Nukkad Nataks:
+                    Original Viral Ad</h4>
+
+                <p style="font-size:18px;">Physical, interactive, unskippable &mdash; India&rsquo;s most powerful tool
+                    for social change.<br />
+                    <br />
+                    &bull; Sonic logos (drums/chant)<br />
+                    &bull; Satire + humor<br />
+                    &bull; Direct CTA<br />
+                    &bull; Breaks fourth wall
+                </p>
+            </div>
+        </div>
+
+        <div class="feed-item">
+            <div class="post-header" style="padding:1rem;">
+                <div class="post-avatar" style="width:40px;height:40px;font-size:1.1rem;">2</div>
+
+                <div class="post-meta">
+                    <div class="post-author">Advertising Gazette</div>
+
+                    <div class="post-time">Pinned &bull; 1h ago</div>
+                </div>
+            </div>
+
+            <div class="post-content">
+                <h4 style="font-size:30px; font-weight:900; color:var(--feed-coral); margin-bottom:1rem;">Inclusive
+                    Design: Reaching Everyone</h4>
+
+                <p style="font-size:18px;">Goes beyond visual/auditory &mdash; ensures Divyangjan are included.<br />
+                    <br />
+                    Visually impaired &rarr; tactile/Braille + audio description<br />
+                    Hearing impaired &rarr; sign language PIP + CC
+                </p>
+            </div>
+        </div>
+
+        <div class="feed-item" style="grid-column:1/-1;">
+            <div class="post-header" style="padding:1rem;">
+                <div class="post-avatar" style="width:40px;height:40px;font-size:1.1rem;">Final</div>
+
+                <div class="post-meta">
+                    <div class="post-author">Advertising Gazette</div>
+
+                    <div class="post-time">Pinned &bull; 1h ago</div>
+                </div>
+            </div>
+
+            <div class="post-content">
+                <h4 style="font-size:30px; font-weight:900; color:var(--feed-gold); margin-bottom:1rem;">Why This
+                    Matters</h4>
+
+                <p style="font-size:18px;">Advertising becomes a force for community building &mdash; shared
+                    responsibility for every citizen, not just the majority.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer
+    class="mt-32 py-20 text-center text-gray-700 border-t-4 border-[var(--feed-gold)] bg-gradient-to-b from-white to-[#fdfbf7]">
+    <p class="text-2xl font-bold mb-4">Ad-venture - Creating and Advertisement</p>
+
+    <p class="text-lg">skillizee.io</p>
+</footer>

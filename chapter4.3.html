@@ -1,0 +1,947 @@
+<div>
+    <div>
+        <div>
+            <div>
+                <div>
+                    <div>
+                        <meta charset="UTF-8">
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<title></title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400&amp;family=Inter:wght@300;400;500;600;700&amp;family=Poppins:wght@500;700&amp;display=swap"
+    rel="stylesheet" />
+<link rel="stylesheet" href="responsive.css" />
+<style type="text/css">
+    :root {
+        --feed-gold: #c9a96e;
+        --feed-coral: #c0266f;
+        --feed-navy: #0f172a;
+        --feed-ivory: #fdfbf7;
+        --feed-gray: #475569;
+        --feed-border: #d4af37;
+    }
+
+    body {
+        font-family: 'Inter', sans-serif;
+        background: linear-gradient(to bottom, #fdfbf7, #f8f1e9);
+        color: var(--feed-navy);
+        margin: 0;
+        padding: 0;
+        line-height: 1.75;
+        font-size: 18px !important;
+    }
+
+    .feed-container {
+        max-width: 1450px;
+        margin: 0 auto;
+        padding: 4rem 3rem 6rem;
+        background: var(--feed-ivory);
+        box-shadow: 0 20px 80px rgba(0, 0, 0, 0.08);
+    }
+
+    .feed-header {
+        text-align: center;
+        margin-bottom: 5rem;
+        position: relative;
+    }
+
+    .chapter-title {
+        font-family: 'Playfair Display', serif;
+        font-size: 48px !important;
+        font-weight: 900;
+        color: var(--feed-coral);
+        margin: 0 0 0.8rem;
+    }
+
+    .chapter-subtitle {
+        font-size: 2rem;
+        color: var(--feed-navy);
+        font-weight: 600;
+    }
+
+    /* Social Media Post Styles */
+    .social-post {
+        background: white;
+        border-radius: 16px;
+        margin: 3rem 0;
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.07);
+        overflow: hidden;
+        border: 1px solid rgba(201, 169, 110, 0.12);
+    }
+
+    .post-header {
+        display: flex;
+        align-items: center;
+        padding: 1.2rem 1.5rem;
+        background: linear-gradient(to right, #fdfbf7, rgba(201, 169, 110, 0.05));
+        border-bottom: 1px solid rgba(201, 169, 110, 0.15);
+    }
+
+    .post-avatar {
+        width: 48px;
+        height: 48px;
+        border-radius: 999px;
+        background: var(--feed-gold);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Playfair Display', serif;
+        font-size: 1.4rem;
+        font-weight: bold;
+        color: white;
+        margin-right: 1rem;
+        box-shadow: 0 4px 12px rgba(201, 169, 110, 0.3);
+    }
+
+    .post-meta {
+        flex: 1;
+    }
+
+    .post-author {
+        font-weight: 700;
+        font-size: 1.1rem;
+    }
+
+    .post-time {
+        font-size: 0.9rem;
+        color: var(--feed-gray);
+    }
+
+    .post-content {
+        padding: 1.5rem;
+    }
+
+    .post-title {
+        font-family: 'Playfair Display', serif;
+        font-size: 30px !important;
+        font-weight: 800;
+        color: var(--feed-navy);
+        margin-bottom: 1.2rem;
+    }
+
+    /* Center-aligned images */
+    .post-image,
+    .magazine-image {
+        display: block;
+        margin: 2rem auto;
+        max-width: 90%;
+        border-radius: 12px;
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+        border: 1px solid rgba(201, 169, 110, 0.1);
+    }
+
+    /* Twitter/X style – text-only */
+    .twitter-post .post-content {
+        font-size: 18px !important;
+        padding: 1.5rem 2rem;
+    }
+
+    .twitter-actions {
+        display: flex;
+        justify-content: space-around;
+        padding: 1rem;
+        border-top: 1px solid rgba(201, 169, 110, 0.15);
+        color: var(--feed-gray);
+        font-size: 1.1rem;
+    }
+
+    /* Instagram style – text + image */
+    .instagram-post .instagram-caption {
+        padding: 1.2rem 1.5rem;
+        font-size: 18px !important;
+    }
+
+    .insta-actions {
+        display: flex;
+        gap: 1.5rem;
+        padding: 0.8rem 1.5rem;
+        border-top: 1px solid rgba(201, 169, 110, 0.15);
+    }
+
+    .key-feed {
+        background: white;
+        border-radius: 20px;
+        padding: 4.5rem 3.5rem;
+        margin: 6rem auto 0;
+        max-width: 1450px;
+        box-shadow: 0 20px 70px rgba(201, 169, 110, 0.12);
+        border: 2px solid rgba(201, 169, 110, 0.2);
+    }
+
+    .key-feed h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 48px !important;
+        color: var(--feed-gold);
+        text-align: center;
+        margin-bottom: 3.5rem;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 2rem 0;
+        font-size: 18px !important;
+    }
+
+    th,
+    td {
+        border: 1px solid rgba(201, 169, 110, 0.2);
+        padding: 1rem;
+        text-align: left;
+    }
+
+    th {
+        background: rgba(201, 169, 110, 0.08);
+        font-weight: 700;
+        color: var(--feed-navy);
+    }
+
+    input,
+    textarea {
+        width: 100%;
+        padding: 0.8rem;
+        margin: 0.5rem 0;
+        border: 1px solid rgba(201, 169, 110, 0.3);
+        border-radius: 8px;
+        font-size: 18px !important;
+        background: #fdfbf7;
+    }
+
+    footer {
+        text-align: center;
+        padding: 6rem 2rem 4rem;
+        color: var(--feed-gray);
+        font-size: 1.2rem;
+        border-top: 2px solid var(--feed-gold);
+        background: linear-gradient(to top, rgba(253, 251, 247, 0.95), white);
+    }
+</style>
+<!-- Full-Screen Toggle Button – Magazine Style -->
+<p><button aria-label="Toggle Fullscreen"
+        class="fixed top-8 right-8 z-[9999] p-4 rounded-2xl bg-white/80 backdrop-blur-xl border border-white/40 shadow-lg hover:shadow-2xl hover:scale-110 transition-all duration-300 flex items-center justify-center group"
+        id="fullscreen-btn"
+        style="box-shadow: 0 10px 30px rgba(0,109,119,0.15); border: 1px solid rgba(202,138,4,0.2);"><!-- Enter Fullscreen Icon --><img
+            alt="Enter fullscreen"
+            class="w-9 h-9 object-contain transition-all duration-300 group-hover:scale-110 group-hover:rotate-6"
+            id="enter-fs-icon" src="https://login.skillizee.io/s/articles/6971c474348e12598d489e16/images/fullscreen.png" />
+        <!-- Exit Fullscreen Icon (hidden by default) --> <img alt="Exit fullscreen"
+            class="w-9 h-9 object-contain transition-all duration-300 hidden group-hover:scale-110 group-hover:rotate-[-6deg]"
+            id="exit-fs-icon"
+            src="https://login.skillizee.io/s/articles/6971c474348e12598d489e16/images/exit.png" /></button><!-- JavaScript (same as your existing one – just connect the IDs) -->
+    <script>
+        const fsBtn = document.getElementById('fullscreen-btn');
+        const enterIcon = document.getElementById('enter-fs-icon');
+        const exitIcon = document.getElementById('exit-fs-icon');
+
+        fsBtn.addEventListener('click', () => {
+            if (!document.fullscreenElement) {
+                // Enter fullscreen
+                if (document.documentElement.requestFullscreen) {
+                    document.documentElement.requestFullscreen();
+                } else if (document.documentElement.webkitRequestFullscreen) {
+                    document.documentElement.webkitRequestFullscreen();
+                } else if (document.documentElement.msRequestFullscreen) {
+                    document.documentElement.msRequestFullscreen();
+                }
+                enterIcon.classList.add('hidden');
+                exitIcon.classList.remove('hidden');
+            } else {
+                // Exit fullscreen
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                } else if (document.webkitExitFullscreen) {
+                    document.webkitExitFullscreen();
+                } else if (document.msExitFullscreen) {
+                    document.msExitFullscreen();
+                }
+                enterIcon.classList.remove('hidden');
+                exitIcon.classList.add('hidden');
+            }
+        });
+
+        // Sync icons when fullscreen changes (Esc key, etc.)
+        document.addEventListener('fullscreenchange', () => {
+            if (document.fullscreenElement) {
+                enterIcon.classList.add('hidden');
+                exitIcon.classList.remove('hidden');
+            } else {
+                enterIcon.classList.remove('hidden');
+                exitIcon.classList.add('hidden');
+            }
+        });
+    </script>
+</p>
+
+<div class="feed-container">
+    <div class="feed-header">
+        <h1 class="chapter-title">Chapter 4.3</h1>
+
+        <div class="chapter-subtitle">Career Horizons</div>
+    </div>
+
+    <div class="audio-container">
+        <audio controls="" controlslist="nodownload" oncontextmenu="return false;">
+            <source src="https://pa2-cmd.github.io/Advertisement4.3.mp3" type="audio/mp3" /> Your browser does not
+            support the audio element.
+        </audio>
+    </div>
+    <style type="text/css">
+        .audio-container {
+            position: relative;
+            background: url('https://login.skillizee.io/s/articles/698c30d80aff9e72a7604c2b/images/Subtitle(1).gif') center center no-repeat;
+            background-size: contain;
+            /* keeps the GIF's aspect ratio */
+            border-radius: 16px;
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+            margin: 1rem auto;
+            width: 90%;
+            max-width: 900px;
+            aspect-ratio: 1920 / 1080;
+            /* maintain original proportion */
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 1rem;
+            padding-bottom: 1rem;
+        }
+
+        /* Modern styled audio */
+        .audio-container audio {
+            width: 100%;
+            border-radius: 12px;
+            border: 2px solid #2D2B7E;
+            background: #F5F5FF;
+            height: 50px;
+            padding: 4px;
+            box-shadow: 0 3px 10px rgba(45, 43, 126, 0.3);
+        }
+
+        /* Lavender-toned player controls */
+        audio::-webkit-media-controls-panel {
+            background-color: #E6E6FA;
+            border-radius: 12px;
+        }
+
+        audio::-webkit-media-controls-play-button,
+        audio::-webkit-media-controls-timeline,
+        audio::-webkit-media-controls-current-time-display,
+        audio::-webkit-media-controls-time-remaining-display,
+        audio::-webkit-media-controls-volume-slider {
+            filter: hue-rotate(240deg) saturate(1.2);
+        }
+    </style>
+    <!-- Intro – Twitter-style text post -->
+    <div class="social-post twitter-post">
+        <div class="post-header">
+            <div class="post-avatar">AD</div>
+
+            <div class="post-meta">
+                <div class="post-author">Advertising Gazette</div>
+
+                <div class="post-time">Feb 9, 2026 &bull; Pinned</div>
+            </div>
+        </div>
+
+        <div class="post-content">
+            <div class="post-title">1. The Professional World: Career Paths</div>
+
+            <p>The advertising industry runs on a powerful &quot;Creative Engine&quot; &mdash; different specialists
+                collaborate to turn one idea into reality.</p>
+        </div>
+
+        <div class="twitter-actions"><span>❤️ 2.8K</span> <span>🔁 756</span> <span>💬 142</span></div>
+    </div>
+    <!-- Key Roles – Instagram-style with images -->
+
+    <div class="social-post instagram-post">
+        <div class="post-header">
+            <div class="post-avatar">AD</div>
+
+            <div class="post-meta">
+                <div class="post-author">Advertising Gazette</div>
+
+                <div class="post-time">Feb 9, 2026 &bull; Career Spotlight</div>
+            </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-4"><img alt="Graphic Designer" class="post-image"
+                src="https://login.skillizee.io/s/articles/698981502169491ae947f46f/images/image-20260209121019-1.png" /> <img
+                alt="Content Writer" class="post-image" src="https://login.skillizee.io/s/articles/698981502169491ae947f46f/images/SMM2.jpg"
+                style="width: 626px; height: 515px;" /> <img alt="PR Manager" class="post-image"
+                src="https://login.skillizee.io/s/articles/698981502169491ae947f46f/images/image-20260209121019-3.png" /> <img
+                alt="Social Media Strategist" class="post-image"
+                src="https://login.skillizee.io/s/articles/698981502169491ae947f46f/images/image-20260209121019-4.png" /></div>
+
+        <div class="instagram-caption">
+            <div class="post-title">Key Roles &amp; Their Contributions</div>
+
+            <ul class="space-y-6 text-lg">
+                <li><strong>Graphic Designers</strong><br />
+                    The &quot;Visual Storytellers.&quot; Turn abstract ideas into images, logos, layouts &mdash; goal:
+                    instant recognition &amp; aesthetic pleasure.</li>
+                <li><strong>Content Writers</strong><br />
+                    The &quot;Voice of the Brand.&quot; Craft headlines, captions, scripts &mdash; masters of persuasive
+                    language.</li>
+                <li><strong>Public Relations (PR) Managers</strong><br />
+                    The &quot;Reputation Guardians.&quot; Manage brand/cause image &mdash; ensure messages reach news
+                    outlets &amp; build public trust.</li>
+                <li><strong>Social Media Strategists</strong><br />
+                    The &quot;Digital Architects.&quot; Decide platforms, timing, analyze engagement data.</li>
+            </ul>
+
+            <div class="mt-8 p-6 bg-gray-50 rounded-xl border border-gold/20">
+                <h4 class="text-xl font-bold text-[var(--feed-gold)] mb-4">Think &amp; Answer</h4>
+
+                <p>Besides marketing, graphic design, PR, and social media management &mdash; what other jobs are
+                    related to advertising?<br />
+                    <br />
+                    Look around, speak to people, and list examples:
+                </p>
+                <textarea class="w-full p-4 border rounded-lg h-32 mt-4 focus:outline-none focus:ring-2 focus:ring-gold"
+                    placeholder="Your examples here..."></textarea>
+            </div>
+        </div>
+
+        <div class="insta-actions"><span>❤️ 7.2K</span> <span>💬 589</span> <span>🔗 Share</span></div>
+    </div>
+    <!-- 2. Project Reflection – Instagram-style reflection card -->
+
+    <div class="social-post instagram-post">
+        <div class="post-header">
+            <div class="post-avatar">AD</div>
+
+            <div class="post-meta">
+                <div class="post-author">Advertising Gazette</div>
+
+                <div class="post-time">Feb 9, 2026 &bull; Reflection</div>
+            </div>
+        </div>
+
+        <div class="instagram-caption">
+            <div class="post-title">2. Project Reflection: Your &quot;Ad-Venture&quot; Log</div>
+
+            <p class="mb-6">Reflection turns one-time tasks into repeatable skills. Use this template to log your
+                journey.</p>
+
+            <div class="overflow-x-auto mt-6">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="bg-gray-100">
+                            <th class="p-4 border border-gray-300">Reflection Metric</th>
+                            <th class="p-4 border border-gray-300">Your Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="p-4 border border-gray-300">Total Time Invested</td>
+                            <td class="p-4 border border-gray-300"><input class="w-full p-2 border rounded"
+                                    placeholder="e.g., 12 hours over 2 weeks" type="text" /></td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 border border-gray-300">Most Challenging Part</td>
+                            <td class="p-4 border border-gray-300"><input class="w-full p-2 border rounded"
+                                    placeholder="e.g., Making the Braille design accurate..." type="text" /></td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 border border-gray-300">Key Lesson Learned</td>
+                            <td class="p-4 border border-gray-300"><input class="w-full p-2 border rounded"
+                                    placeholder="e.g., Simple language is more powerful..." type="text" /></td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 border border-gray-300">Favorite Role Played</td>
+                            <td class="p-4 border border-gray-300"><input class="w-full p-2 border rounded"
+                                    placeholder="e.g., Enjoyed designing or writing?" type="text" /></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4 class="text-xl font-bold text-[var(--feed-gold)] mt-8 mb-4">Identifying Future Improvements</h4>
+
+            <ol class="space-y-4 text-lg pl-8 list-decimal">
+                <li>Audience Feedback: Did they understand the &quot;Social Good&quot; message? How to simplify visuals?
+                </li>
+                <li>Resource Management: Too much time on poster, too little on script?</li>
+                <li>Inclusivity Check: Could add QR code for audio description?</li>
+            </ol>
+        </div>
+
+        <div class="insta-actions"><span>❤️ 3.9K</span> <span>💬 267</span> <span>🔗 Save</span></div>
+    </div>
+    <!-- 3. Connecting the Dots – Twitter-style text post -->
+
+    <div class="social-post twitter-post">
+        <div class="post-header">
+            <div class="post-avatar">AD</div>
+
+            <div class="post-meta">
+                <div class="post-author">Advertising Gazette</div>
+
+                <div class="post-time">Feb 9, 2026 &bull; Final Insight</div>
+            </div>
+        </div>
+
+        <div class="post-content">
+            <div class="post-title">3. Connecting the Dots</div>
+
+            <p>The skills you used &mdash; empathy (inclusive design), creativity (Nukkad Natak), analysis (career
+                exploration) &mdash; are exactly what top executives use in 2026.<br />
+                <br />
+                Every &quot;Ad-Venture&quot; is one step closer to becoming a better communicator.
+            </p>
+        </div>
+
+        <div class="twitter-actions"><span>❤️ 5.6K</span> <span>🔁 1.4K</span> <span>💬 389</span></div>
+    </div>
+</div>
+<!-- Key Learnings – Feed-style pinned thread -->
+
+<div class="key-feed">
+    <h2 class="text-6xl font-black text-center mb-16" style="color:var(--feed-gold);">Pinned Lessons &bull; Career
+        Horizons Edition</h2>
+
+    <div class="feed-grid">
+        <div class="feed-item">
+            <div class="post-header" style="padding:1rem;">
+                <div class="post-avatar" style="width:40px;height:40px;font-size:1.1rem;">1</div>
+
+                <div class="post-meta">
+                    <div class="post-author">Advertising Gazette</div>
+
+                    <div class="post-time">Pinned &bull; 1h ago</div>
+                </div>
+            </div>
+
+            <div class="post-content">
+                <h4 style="font-size:30px; font-weight:900; color:var(--feed-gold); margin-bottom:1rem;">Career Paths
+                </h4>
+
+                <p style="font-size:18px;">Creative Engine unites:<br />
+                    &bull; Graphic Designers (visuals)<br />
+                    &bull; Content Writers (persuasion)<br />
+                    &bull; PR Managers (reputation)<br />
+                    &bull; Social Media Strategists (digital targeting)<br />
+                    <br />
+                    Also explore: Media Buyers, Account Executives, Video Editors...
+                </p>
+            </div>
+        </div>
+
+        <div class="feed-item">
+            <div class="post-header" style="padding:1rem;">
+                <div class="post-avatar" style="width:40px;height:40px;font-size:1.1rem;">2</div>
+
+                <div class="post-meta">
+                    <div class="post-author">Advertising Gazette</div>
+
+                    <div class="post-time">Pinned &bull; 1h ago</div>
+                </div>
+            </div>
+
+            <div class="post-content">
+                <h4 style="font-size:30px; font-weight:900; color:var(--feed-coral); margin-bottom:1rem;">Project
+                    Reflection</h4>
+
+                <p style="font-size:18px;">Log your journey: time, challenges, lessons, favorite roles.<br />
+                    Improve via feedback, resource balance, inclusivity (QR audio, etc.)</p>
+            </div>
+        </div>
+
+        <div class="feed-item" style="grid-column:1/-1;">
+            <div class="post-header" style="padding:1rem;">
+                <div class="post-avatar" style="width:40px;height:40px;font-size:1.1rem;">Final</div>
+
+                <div class="post-meta">
+                    <div class="post-author">Advertising Gazette</div>
+
+                    <div class="post-time">Pinned &bull; 1h ago</div>
+                </div>
+            </div>
+
+            <div class="post-content">
+                <h4 style="font-size:30px; font-weight:900; color:var(--feed-gold); margin-bottom:1rem;">Connecting the
+                    Dots</h4>
+
+                <p style="font-size:18px;">Empathy, creativity, analysis &rarr; same skills top executives use in
+                    2026.<br />
+                    Every Ad-Venture = step toward becoming a better communicator.</p>
+            </div>
+        </div>
+    </div>
+    <!-- Final Checklist – Instagram-style fillable card -->
+
+    <div class="social-post instagram-post mt-12">
+        <div class="post-header">
+            <div class="post-avatar">AD</div>
+
+            <div class="post-meta">
+                <div class="post-author">Advertising Gazette</div>
+
+                <div class="post-time">Feb 9, 2026 &bull; Final Checklist</div>
+            </div>
+        </div>
+
+        <div class="instagram-caption">
+            <div class="post-title">Conclusion: Final Checklist &ndash; Recording an Advertisement</div>
+
+            <p class="mb-6">Calculate approximate hours spent on each activity and fill your decisions below.</p>
+
+            <div class="overflow-x-auto mt-6">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="bg-gray-100">
+                            <th class="p-4 border border-gray-300">Element / Consideration</th>
+                            <th class="p-4 border border-gray-300">Your Decision</th>
+                            <th class="p-4 border border-gray-300">Reasons for Decision</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="p-4 border border-gray-300">Logo</td>
+                            <td class="p-4 border border-gray-300"><input placeholder="Your logo decision..."
+                                    type="text" /></td>
+                            <td class="p-4 border border-gray-300"><input placeholder="Reason..." type="text" /></td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 border border-gray-300">Tagline</td>
+                            <td class="p-4 border border-gray-300"><input placeholder="Your tagline..." type="text" />
+                            </td>
+                            <td class="p-4 border border-gray-300"><input placeholder="Reason..." type="text" /></td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 border border-gray-300">Call to Action</td>
+                            <td class="p-4 border border-gray-300"><input placeholder="Your CTA..." type="text" /></td>
+                            <td class="p-4 border border-gray-300"><input placeholder="Reason..." type="text" /></td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 border border-gray-300">Visuals / Jingle</td>
+                            <td class="p-4 border border-gray-300"><input placeholder="Your choice..." type="text" />
+                            </td>
+                            <td class="p-4 border border-gray-300"><input placeholder="Reason..." type="text" /></td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 border border-gray-300">Creating Emotional Connect</td>
+                            <td class="p-4 border border-gray-300"><input placeholder="Your approach..." type="text" />
+                            </td>
+                            <td class="p-4 border border-gray-300"><input placeholder="Reason..." type="text" /></td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 border border-gray-300">Target Audience</td>
+                            <td class="p-4 border border-gray-300"><input placeholder="Your audience..." type="text" />
+                            </td>
+                            <td class="p-4 border border-gray-300"><input placeholder="Reason..." type="text" /></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4 class="text-xl font-bold text-[var(--feed-gold)] mt-10 mb-4">Medium for Making the Advertisement</h4>
+
+            <p class="mb-6">Whatever medium you choose, core elements (logo, tagline, CTA) stay the same &mdash; only
+                presentation changes.</p>
+
+            <h4 class="text-xl font-bold text-[var(--feed-coral)] mb-4">Poster Advertisements</h4>
+
+            <ol class="space-y-6 text-lg pl-8 list-decimal">
+                <li>What will be the title of the poster? (grab attention instantly)<br />
+                    <textarea class="w-full p-3 border rounded-lg h-24 mt-2"
+                        placeholder="Your title here..."></textarea>
+                </li>
+                <li>What visual elements will support the message?<br />
+                    <textarea class="w-full p-3 border rounded-lg h-24 mt-2" placeholder="List visuals..."></textarea>
+                </li>
+                <li>If using photographs &mdash; source &amp; attribution?<br />
+                    <textarea class="w-full p-3 border rounded-lg h-24 mt-2"
+                        placeholder="Sources &amp; credits..."></textarea>
+                </li>
+                <li>How will you establish emotional connect?<br />
+                    <textarea class="w-full p-3 border rounded-lg h-24 mt-2" placeholder="Your plan..."></textarea>
+                </li>
+                <li>Colours &amp; design elements for eye-catching appeal?<br />
+                    <textarea class="w-full p-3 border rounded-lg h-24 mt-2"
+                        placeholder="Colours &amp; design notes..."></textarea>
+                </li>
+            </ol>
+
+            <p class="mt-10 text-lg italic">Considering the above, sketch the poster layout in the space below (or
+                describe it).</p>
+            <textarea class="w-full p-4 border rounded-lg h-64 mt-4"
+                placeholder="Sketch description / notes..."></textarea>
+
+            <h4 class="text-xl font-bold text-[var(--feed-teal)] mt-12 mb-4">Digital / Animated Advertisements</h4>
+
+            <p class="mb-6">Replicate your poster using tools like PowerPoint or Canva.<br />
+                What differences did you notice between hand-made and digital creation?</p>
+            <textarea class="w-full p-4 border rounded-lg h-32 mt-4"
+                placeholder="Differences you noticed..."></textarea>
+
+            <h4 class="text-xl font-bold text-[var(--feed-gold)] mt-10 mb-4">New Elements for Digital/Animated Ads</h4>
+
+            <ol class="space-y-6 text-lg pl-8 list-decimal">
+                <li>Music &amp; sound &mdash; background music / sound effects?<br />
+                    <textarea class="w-full p-3 border rounded-lg h-24 mt-2"
+                        placeholder="Your music/sound plan..."></textarea>
+                </li>
+                <li>Scriptwriting &mdash; dialogue, voiceover, narration?<br />
+                    <textarea class="w-full p-4 border rounded-lg h-32 mt-2"
+                        placeholder="Script or scene description..."></textarea>
+                </li>
+                <li>Storyboard &mdash; key frames &amp; actions/text?<br />
+                    <textarea class="w-full p-4 border rounded-lg h-64 mt-2"
+                        placeholder="Storyboard notes / frame descriptions..."></textarea>
+                </li>
+                <li>Design &amp; animation elements you will use?<br />
+                    <textarea class="w-full p-4 border rounded-lg h-32 mt-2"
+                        placeholder="Text, images, backgrounds, animations, jingles..."></textarea>
+                </li>
+                <li>Type of animation (fade in, zoom, slide)?<br />
+                    <textarea class="w-full p-3 border rounded-lg h-24 mt-2"
+                        placeholder="Animation types..."></textarea>
+                </li>
+                <li>Will animation create emotional connect? How?<br />
+                    <textarea class="w-full p-4 border rounded-lg h-32 mt-2"
+                        placeholder="Your emotional animation plan..."></textarea>
+                </li>
+            </ol>
+
+            <h4 class="text-xl font-bold text-[var(--feed-coral)] mt-12 mb-4">Review Before Sharing</h4>
+
+            <ul class="space-y-3 text-lg pl-8 list-disc">
+                <li>Creativity: Unique &amp; engaging?</li>
+                <li>Clarity of message: Tagline &amp; CTA easy to understand? Benefits clear?</li>
+                <li>Visual appeal: Attractive &amp; theme-aligned?</li>
+            </ul>
+
+            <p class="mt-6 text-lg">Add your own review criteria here:</p>
+            <textarea class="w-full p-4 border rounded-lg h-32 mt-2"
+                placeholder="Additional review points..."></textarea>
+
+            <h4 class="text-xl font-bold text-[var(--feed-gold)] mt-10 mb-4">Share with Business Owner</h4>
+
+            <p class="mb-4">Ask them:</p>
+
+            <ol class="space-y-4 text-lg pl-8 list-decimal">
+                <li>Would you use this advertisement for your business? If yes, why? If no, why not?</li>
+            </ol>
+            <textarea class="w-full p-4 border rounded-lg h-48 mt-4"
+                placeholder="Owner's response / notes..."></textarea>
+        </div>
+
+        <div class="insta-actions"><span>❤️ 8.9K</span> <span>💬 734</span> <span>🔗 Save</span></div>
+    </div>
+</div>
+<!-- Key Learnings – Feed-style pinned thread -->
+
+<div class="key-feed">
+    <h2 class="text-6xl font-black text-center mb-16" style="color:var(--feed-gold);">Pinned Lessons &bull; Career
+        Horizons Edition</h2>
+
+    <div class="feed-grid">
+        <div class="feed-item">
+            <div class="post-header" style="padding:1rem;">
+                <div class="post-avatar" style="width:40px;height:40px;font-size:1.1rem;">1</div>
+
+                <div class="post-meta">
+                    <div class="post-author">Advertising Gazette</div>
+
+                    <div class="post-time">Pinned &bull; 1h ago</div>
+                </div>
+            </div>
+
+            <div class="post-content">
+                <h4 style="font-size:30px; font-weight:900; color:var(--feed-gold); margin-bottom:1rem;">Career Paths
+                </h4>
+
+                <p style="font-size:18px;">Creative Engine unites:<br />
+                    &bull; Graphic Designers (visuals)<br />
+                    &bull; Content Writers (voice)<br />
+                    &bull; PR Managers (reputation)<br />
+                    &bull; Social Media Strategists (digital)<br />
+                    <br />
+                    Also explore: Media Buyers, Account Executives, Video Editors...
+                </p>
+            </div>
+        </div>
+
+        <div class="feed-item">
+            <div class="post-header" style="padding:1rem;">
+                <div class="post-avatar" style="width:40px;height:40px;font-size:1.1rem;">2</div>
+
+                <div class="post-meta">
+                    <div class="post-author">Advertising Gazette</div>
+
+                    <div class="post-time">Pinned &bull; 1h ago</div>
+                </div>
+            </div>
+
+            <div class="post-content">
+                <h4 style="font-size:30px; font-weight:900; color:var(--feed-coral); margin-bottom:1rem;">Project
+                    Reflection</h4>
+
+                <p style="font-size:18px;">Log your journey: time, challenges, lessons, favorite roles.<br />
+                    Improve via feedback, balance, inclusivity (QR audio, etc.)</p>
+            </div>
+        </div>
+
+        <div class="feed-item" style="grid-column:1/-1;">
+            <div class="post-header" style="padding:1rem;">
+                <div class="post-avatar" style="width:40px;height:40px;font-size:1.1rem;">Final</div>
+
+                <div class="post-meta">
+                    <div class="post-author">Advertising Gazette</div>
+
+                    <div class="post-time">Pinned &bull; 1h ago</div>
+                </div>
+            </div>
+
+            <div class="post-content">
+                <h4 style="font-size:30px; font-weight:900; color:var(--feed-gold); margin-bottom:1rem;">Connecting the
+                    Dots</h4>
+
+                <p style="font-size:18px;">Empathy, creativity, analysis &rarr; same skills top executives use in
+                    2026.<br />
+                    Every Ad-Venture = step toward becoming a better communicator.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div style="text-align: center; margin: 3rem 0;"><button id="downloadDocBtn"
+        style="padding: 1rem 2.5rem; font-size: 1.3rem; background: var(--feed-gold); color: white; border: none; border-radius: 12px; cursor: pointer; box-shadow: 0 6px 20px rgba(201,169,110,0.4);">Download
+        All Responses as Word Document (.doc)</button></div>
+
+<footer
+    class="mt-32 py-20 text-center text-gray-700 border-t-4 border-[var(--feed-gold)] bg-gradient-to-b from-white to-[#fdfbf7]">
+    <p class="text-2xl font-bold mb-4">Ad-venture - Creating and Advertisement</p>
+
+    <p class="text-lg">skillizee.io</p>
+</footer>
+<script>
+    // Auto-save all inputs and textareas on change / blur / input
+    document.addEventListener('DOMContentLoaded', () => {
+        // Load saved data when page opens
+        loadSavedData();
+
+        // Save on every change
+        document.querySelectorAll('input, textarea').forEach(el => {
+            el.addEventListener('input', saveField);
+            el.addEventListener('change', saveField);
+            el.addEventListener('blur', saveField); // extra safety
+        });
+    });
+
+    function saveField(e) {
+        const el = e.target;
+        const id = el.id || el.name || el.placeholder.trim().substring(0, 40).replace(/\s+/g, '_');
+
+        if (!id) return; // skip if no usable identifier
+
+        localStorage.setItem('ad_venture_' + id, el.value);
+    }
+
+    function loadSavedData() {
+        document.querySelectorAll('input, textarea').forEach(el => {
+            const id = el.id || el.name || el.placeholder.trim().substring(0, 40).replace(/\s+/g, '_');
+            if (!id) return;
+
+            const saved = localStorage.getItem('ad_venture_' + id);
+            if (saved !== null) {
+                el.value = saved;
+            }
+        });
+    }
+
+    // Download as Word (HTML format that Word understands)
+    document.getElementById('downloadDocBtn').addEventListener('click', () => {
+        let content = `
+    <html xmlns:o="urn:schemas-microsoft-com:office:office"
+          xmlns:w="urn:schemas-microsoft-com:office:word"
+          xmlns="http://www.w3.org/TR/REC-html40">
+    <head><meta charset="utf-8"><title>Ad-Venture Responses - Career Horizons</title></head>
+    <body style="font-family:Calibri,Arial,sans-serif; line-height:1.6; color:#0f172a;">
+      <h1 style="color:#c0266f; text-align:center;">Ad-Venture Project Responses</h1>
+      <h2 style="color:#c9a96e;">Chapter 4.3 – Career Horizons (Generated ${new Date().toLocaleString()})</h2>
+      <hr style="border:2px solid #c9a96e;">
+  `;
+
+        // Process all fillable sections in logical order
+        const sections = [
+            { title: "Key Roles – Think & Answer", selector: '.instagram-post .mt-8 textarea' },
+            { title: "Project Reflection Table", selector: 'table input' },
+            { title: "Final Checklist – Recording an Advertisement", selector: 'table input' },
+            { title: "Poster Advertisements", selector: 'ol.space-y-6 textarea' },
+            { title: "Poster Sketch / Description", selector: 'textarea[placeholder*="Sketch description"]' },
+            { title: "Digital / Animated Advertisements – Differences", selector: 'textarea[placeholder*="Differences you noticed"]' },
+            { title: "New Elements for Digital/Animated Ads", selector: 'ol.space-y-6 textarea:not([placeholder*="Differences"])' },
+            { title: "Review Before Sharing – Additional Criteria", selector: 'textarea[placeholder*="Additional review points"]' },
+            { title: "Share with Business Owner – Notes", selector: 'textarea[placeholder*="Owner\'s response"]' }
+        ];
+
+        sections.forEach(sec => {
+            const elements = document.querySelectorAll(sec.selector);
+            if (elements.length === 0) return;
+
+            content += `<h3 style="color:#0f172a; margin-top:2rem;">${sec.title}</h3>`;
+
+            if (sec.title.includes("Table")) {
+                // Try to rebuild table-like structure
+                content += '<table border="1" cellpadding="8" cellspacing="0" style="border-collapse:collapse; width:100%; margin:1rem 0;">';
+                content += '<tr style="background:#fdfbf7;"><th>Question / Metric</th><th>Your Response</th></tr>';
+
+                elements.forEach((input, idx) => {
+                    let label = '';
+                    const td = input.closest('td');
+                    if (td) {
+                        const prevTd = td.previousElementSibling;
+                        if (prevTd) label = prevTd.textContent.trim();
+                    }
+                    if (!label) label = input.placeholder || `Entry ${idx + 1}`;
+
+                    content += `<tr><td>${label}</td><td>${input.value.replace(/\n/g, '<br>') || '(empty)'}</td></tr>`;
+                });
+                content += '</table>';
+            } else {
+                // Simple list for textareas
+                elements.forEach((ta, idx) => {
+                    let label = ta.previousElementSibling?.textContent.trim() || ta.placeholder || `Response ${idx + 1}`;
+                    if (label.includes('Your')) label = label.split('Your')[0].trim() + ':';
+
+                    content += `
+          <p style="margin:1.2rem 0 0.4rem; font-weight:bold;">${label}</p>
+          <div style="border-left:4px solid #c9a96e; padding-left:1rem; margin-bottom:1.5rem; white-space:pre-wrap;">
+            ${ta.value.replace(/\n/g, '<br>') || '(no response yet)'}
+          </div>
+        `;
+                });
+            }
+        });
+
+        content += `
+      <hr style="border:1px solid #c9a96e; margin-top:3rem;">
+      <p style="text-align:center; color:#475569; font-size:0.95rem;">
+        Exported from Advertising Gazette – Module 4 • Your offline story continues...
+      </p>
+    </body></html>
+  `;
+
+        // Create blob and trigger download
+        const blob = new Blob([content], { type: 'application/msword' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'AdVenture_Responses_CareerHorizons.doc';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+
+        alert('Document downloaded! (It will open best in Microsoft Word or compatible apps)');
+    });
+</script>
