@@ -1,0 +1,392 @@
+<div>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</div>
+<title></title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link
+    href="https://fonts.googleapis.com/css2?family=Bangers&amp;family=Impact&amp;family=Comic+Neue:wght@700&amp;family=Playfair+Display:wght@900&amp;family=Inter:wght@600;700&amp;display=swap"
+    rel="stylesheet" />
+<style type="text/css">
+    body {
+        margin: 0;
+        padding: 0;
+        background: #0f172a;
+        color: white;
+        font-family: 'Inter', sans-serif;
+        min-height: 100vh;
+    }
+
+    .project-header {
+        position: relative;
+        height: 420px;
+        margin-bottom: 3rem;
+        overflow: hidden;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    .header-bg {
+        position: absolute;
+        inset: 0;
+        background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1600&q=80');
+        background-size: cover;
+        background-position: center;
+    }
+
+    .header-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.75) 100%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 0 2rem;
+    }
+
+    .project-title {
+        font-family: 'Bangers', cursive;
+        font-size: 6.5rem;
+        color: white;
+        text-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+        margin: 0;
+        line-height: 0.9;
+        letter-spacing: -1px;
+    }
+
+    .project-subtitle {
+        font-family: 'Impact', sans-serif;
+        font-size: 3.5rem;
+        color: #ffeb3b;
+        text-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+        margin-top: 0.5rem;
+    }
+
+    .header-tagline {
+        font-family: 'Inter', sans-serif;
+        font-size: 1.6rem;
+        font-weight: 600;
+        color: white;
+        max-width: 800px;
+        margin-top: 1.5rem;
+        opacity: 0.95;
+    }
+
+    .assignment-card {
+        background: white;
+        border: 8px solid #000;
+        border-radius: 20px;
+        padding: 2.5rem;
+        margin: 2.5rem 0;
+        box-shadow: 10px 10px 0 #000;
+        color: black;
+    }
+
+    .explosion-title {
+        font-family: 'Bangers', cursive;
+        font-size: 4.5rem;
+        color: #0d9488;
+        /* Teal color for headings */
+        text-align: center;
+        margin-bottom: 1.5rem;
+        text-shadow: 0 0 15px rgba(13, 148, 136, 0.4);
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 2rem 0;
+        font-size: 1.2rem;
+        background: white;
+        border: 6px solid black;
+        border-radius: 16px;
+        overflow: hidden;
+    }
+
+    th,
+    td {
+        border: 3px solid black;
+        padding: 1.2rem;
+        text-align: left;
+        color: black;
+    }
+
+    th {
+        background: #0d9488;
+        /* Matching teal for table headers */
+        color: white;
+        font-size: 1.4rem;
+        text-align: center;
+    }
+
+    .bubble-fact {
+        background: #ffeb3b;
+        border: 8px solid black;
+        border-radius: 50px / 60px;
+        padding: 2.5rem;
+        margin: 2rem auto;
+        max-width: 1000px;
+        box-shadow: 10px 10px 0 black;
+        position: relative;
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-align: center;
+        color: black;
+    }
+
+    .superhero-img {
+        width: 140px;
+        position: absolute;
+        top: -100px;
+        left: 50%;
+        transform: translateX(-50%);
+        filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.6));
+    }
+
+    footer {
+        text-align: center;
+        padding: 4rem 2rem;
+        color: #aaa;
+        font-size: 1.3rem;
+        border-top: 8px double #0d9488;
+        /* Teal accent */
+        margin-top: 5rem;
+    }
+
+    #fullscreen-btn {
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+        z-index: 9999;
+        background: rgba(255, 255, 255, 0.25);
+        border: none;
+        border-radius: 50%;
+        padding: 1rem;
+        cursor: pointer;
+        transition: all 0.3s;
+    }
+
+    #fullscreen-btn:hover {
+        background: rgba(13, 148, 136, 0.6);
+        transform: scale(1.2) rotate(8deg);
+    }
+
+    /* Responsive Overrides */
+    @media (max-width: 1024px) {
+        .project-title { font-size: 5rem; }
+        .project-subtitle { font-size: 2.8rem; }
+        .explosion-title { font-size: 3.5rem; }
+    }
+
+    @media (max-width: 768px) {
+        .project-header { height: auto; min-height: 300px; padding: 3rem 0; }
+        .header-overlay { padding: 1rem; }
+        .project-title { font-size: 3.5rem; }
+        .project-subtitle { font-size: 2rem; }
+        .header-tagline { font-size: 1.2rem; }
+        .assignment-card { padding: 1.5rem; margin: 1.5rem 0; border-width: 4px; }
+        .explosion-title { font-size: 2.5rem; }
+        .bubble-fact { padding: 1.5rem; font-size: 1.2rem; border-width: 4px; }
+        
+        /* Override inline styles */
+        .project-title span, .project-subtitle span, .header-tagline span, 
+        .explosion-title span, .assignment-card span, .bubble-fact span {
+            font-size: inherit !important;
+        }
+        
+        .inline-flex { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; }
+    }
+
+    @media (max-width: 480px) {
+        .project-title { font-size: 2.5rem; }
+        .project-subtitle { font-size: 1.5rem; }
+        .explosion-title { font-size: 1.8rem; }
+        .assignment-card { padding: 1rem; border-radius: 12px; }
+        .superhero-img { width: 100px; top: -60px; }
+    }
+</style>
+<!-- Fullscreen Button -->
+<p><button aria-label="Toggle Fullscreen" id="fullscreen-btn"><img alt="Enter Fullscreen" class="w-12 h-12"
+            id="enter-fs-icon" src="https://login.skillizee.io/s/articles/6971c474348e12598d489e16/images/fullscreen.png" /> <img
+            alt="Exit Fullscreen" class="w-12 h-12 hidden" id="exit-fs-icon"
+            src="https://login.skillizee.io/s/articles/6971c474348e12598d489e16/images/exit.png" /></button></p>
+
+<div class="crazy-wrapper"><!-- Clean & Premium Header -->
+    <div class="project-header">
+        <div class="header-bg">&nbsp;</div>
+
+        <div class="header-overlay">
+            <h1 class="project-title"><span style="font-size:72px;">PROJECT A</span></h1>
+
+            <div class="project-subtitle"><span style="font-size:48px;">SUSTAINABLE LOCAL BRAND KIT</span></div>
+
+            <p class="header-tagline"><span style="font-size:26px;">Build a complete brand identity for a local
+                    eco-friendly business: Logo &bull; Tagline &bull; Jingle &bull; 30s Ad Script &bull; Pitch like a
+                    pro!</span></p>
+        </div>
+    </div>
+    <!-- Assignment Intro -->
+
+    <div class="assignment-card">
+        <h2 class="explosion-title"><span style="font-size:28px;">YOUR MISSION &ndash; CREATE A HERO BRAND!</span></h2>
+
+        <p class="text-2xl text-center text-black mb-8 font-bold"><span style="font-size:18px;">Develop a full kit for a
+                sustainable local brand:<br />
+                Logo &bull; 3-7 word tagline &bull; Jingle &bull; 30-second ad script<br />
+                Present with moodboard, style guide, and video demo!</span></p>
+    </div>
+    <!-- Step 1 – Choose Brand -->
+
+    <div class="assignment-card">
+        <h2 class="explosion-title"><span style="font-size:28px;">STEP 1: CHOOSE YOUR BRAND IDEA</span></h2>
+
+        <p class="text-2xl text-center text-black mb-6 font-bold"><span style="font-size:18px;">Your brand must
+                be:</span></p>
+
+        <div class="grid md:grid-cols-3 gap-6 text-xl text-black">
+            <div class="bg-green-100 p-8 rounded-xl border-4 border-black text-center font-bold"><span
+                    style="font-size:18px;">LOCAL</span></div>
+
+            <div class="bg-emerald-100 p-8 rounded-xl border-4 border-black text-center font-bold"><span
+                    style="font-size:18px;">ECO-FRIENDLY / SUSTAINABLE</span></div>
+
+            <div class="bg-teal-100 p-8 rounded-xl border-4 border-black text-center font-bold"><span
+                    style="font-size:18px;">SOLVES A REAL PROBLEM</span></div>
+        </div>
+    </div>
+    <!-- Step 2 – Logo -->
+
+    <div class="assignment-card">
+        <h2 class="explosion-title"><span style="font-size:28px;">STEP 2: CREATE THE LOGO</span></h2>
+
+        <p class="text-2xl text-center text-black mb-6"><span style="font-size:18px;">Use Canva or any tool &rarr;
+                Submit link on <a href="https://login.skillizee.io" target="_blank" style="color: #0d9488; text-decoration: underline;">Skillizee Portal</a></span></p>
+
+        <div class="grid md:grid-cols-2 gap-8">
+            <div>
+                <p class="text-xl font-bold mb-3 text-black"><span style="font-size:18px;">Deliverables:</span></p>
+
+                <ul class="space-y-3 pl-8 list-disc text-lg text-black">
+                    <li><span style="font-size:18px;">Digital / sketched logo</span></li>
+                    <li><span style="font-size:18px;">Full color version</span></li>
+                    <li><span style="font-size:18px;">Black &amp; white OR icon-only version</span></li>
+                </ul>
+            </div>
+
+            <div>
+                <p class="text-xl font-bold mb-3 text-black"><span style="font-size:18px;">Think about:</span></p>
+
+                <ul class="space-y-3 pl-8 list-disc text-lg text-black">
+                    <li><span style="font-size:18px;">Simple shapes</span></li>
+                    <li><span style="font-size:18px;">Nature symbols (leaf, water, sun, earth)</span></li>
+                    <li><span style="font-size:18px;">Scales well even at small size</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- Step 3 – Tagline -->
+
+    <div class="assignment-card">
+        <h2 class="explosion-title"><span style="font-size:28px;">STEP 3: WRITE A TAGLINE (3&ndash;7 WORDS)</span></h2>
+
+        <p class="text-2xl text-center text-black mb-8 font-bold"><span style="font-size:18px;">Make it EMOTIONAL
+                &mdash; not just descriptive!</span></p>
+
+        <div class="grid md:grid-cols-2 gap-8 text-xl">
+            <div class="bg-red-50 p-8 rounded-xl border-4 border-black">
+                <p class="font-bold mb-4 text-2xl text-red-700"><span style="font-size:18px;">Avoid:</span></p>
+
+                <p class="line-through text-gray-600"><span style="font-size:18px;">&ldquo;Eco Friendly
+                        Products&rdquo;</span></p>
+
+                <p class="line-through text-gray-600"><span style="font-size:18px;">&ldquo;Sustainable Local
+                        Goods&rdquo;</span></p>
+            </div>
+
+            <div class="bg-green-50 p-8 rounded-xl border-4 border-black">
+                <p class="font-bold mb-4 text-2xl text-green-700"><span style="font-size:18px;">Great examples:</span>
+                </p>
+
+                <p><span style="font-size:18px;">&ldquo;Small Choices. Big Earth Impact.&rdquo;</span></p>
+
+                <p><span style="font-size:18px;">&ldquo;Good for You. Better for Earth.&rdquo;</span></p>
+            </div>
+        </div>
+
+        <p class="text-center text-xl font-bold mt-8 text-black"><span style="font-size:18px;">🎯 Focus: Memorable +
+                Benefit-focused</span></p>
+    </div>
+    <!-- Step 4 – Jingle -->
+
+    <div class="assignment-card">
+        <h2 class="explosion-title"><span style="font-size:28px;">STEP 4: CREATE A JINGLE (30 SECONDS)</span></h2>
+
+        <p class="text-2xl text-center text-black mb-8"><span style="font-size:22px;">Record &amp; upload video on
+                <a href="https://login.skillizee.io" target="_blank" style="color: #0d9488; text-decoration: underline;">Skillizee Portal</a></span></p>
+
+        <div class="bg-yellow-50 p-8 rounded-2xl border-6 border-black text-black">
+            <p class="text-2xl font-bold mb-4"><span style="font-size:18px;">Simple Structure Idea:</span></p>
+
+            <ol class="space-y-4 text-xl pl-8 list-decimal">
+                <li><span style="font-size:18px;">Problem line</span></li>
+                <li><span style="font-size:18px;">Brand solution</span></li>
+                <li><span style="font-size:18px;">Feel-good ending with brand name</span></li>
+            </ol>
+
+            <p class="text-xl italic mt-8 text-center font-bold"><span style="font-size:18px;">Example:<br />
+                    🎶 &ldquo;Plastic waste everywhere we go&hellip;<br />
+                    Time to choose a better way to grow&hellip;<br />
+                    [Your Brand] makes it easy every day&hellip;<br />
+                    Love your planet &mdash; switch today!&rdquo; 🎶</span></p>
+        </div>
+
+        <div class="mt-10 text-center">
+            <p class="text-2xl font-bold text-black"><span style="font-size:18px;">You can:</span></p>
+
+            <ul class="inline-flex gap-8 mt-4 text-xl text-black">
+                <li class="bg-pink-100 px-6 py-3 rounded-xl border-4 border-black"><span style="font-size:18px;">Sing
+                        live</span></li>
+                <li class="bg-cyan-100 px-6 py-3 rounded-xl border-4 border-black"><span style="font-size:18px;">Record
+                        on phone</span></li>
+                <li class="bg-yellow-100 px-6 py-3 rounded-xl border-4 border-black"><span style="font-size:18px;">Add
+                        claps / desk beats</span></li>
+            </ul>
+        </div>
+
+        <p class="text-center text-2xl font-bold mt-10 text-black"><span style="font-size:18px;">🎯 Evaluation: Catchy
+                rhythm + Recall powe</span>r</p>
+    </div>
+</div>
+<!-- Fullscreen Script -->
+<script>
+    const fsBtn = document.getElementById('fullscreen-btn');
+    const enterIcon = document.getElementById('enter-fs-icon');
+    const exitIcon = document.getElementById('exit-fs-icon');
+
+    fsBtn.addEventListener('click', () => {
+        if (!document.fullscreenElement) {
+            document.documentElement.requestFullscreen?.() ||
+                document.documentElement.webkitRequestFullscreen?.() ||
+                document.documentElement.msRequestFullscreen?.();
+            enterIcon.classList.add('hidden');
+            exitIcon.classList.remove('hidden');
+        } else {
+            document.exitFullscreen?.() ||
+                document.webkitExitFullscreen?.() ||
+                document.msExitFullscreen?.();
+            enterIcon.classList.remove('hidden');
+            exitIcon.classList.add('hidden');
+        }
+    });
+
+    document.addEventListener('fullscreenchange', () => {
+        if (document.fullscreenElement) {
+            enterIcon.classList.add('hidden');
+            exitIcon.classList.remove('hidden');
+        } else {
+            enterIcon.classList.remove('hidden');
+            exitIcon.classList.add('hidden');
+        }
+    });
+</script>

@@ -1,0 +1,450 @@
+<div>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</div>
+<title></title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link
+    href="https://fonts.googleapis.com/css2?family=Bangers&amp;family=Impact&amp;family=Comic+Neue:wght@700&amp;family=Playfair+Display:wght@900&amp;family=Inter:wght@600;700&amp;display=swap"
+    rel="stylesheet" />
+<style type="text/css">
+    body {
+        margin: 0;
+        padding: 0;
+        background: #0f172a;
+        color: white;
+        font-family: 'Inter', sans-serif;
+        min-height: 100vh;
+    }
+
+    .project-header {
+        position: relative;
+        height: 420px;
+        margin-bottom: 3rem;
+        overflow: hidden;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    .header-bg {
+        position: absolute;
+        inset: 0;
+        background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1600&q=80');
+        background-size: cover;
+        background-position: center;
+    }
+
+    .header-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.75) 100%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 0 2rem;
+    }
+
+    .project-title {
+        font-family: 'Bangers', cursive;
+        font-size: 6.5rem;
+        color: white;
+        text-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+        margin: 0;
+        line-height: 0.9;
+        letter-spacing: -1px;
+    }
+
+    .project-subtitle {
+        font-family: 'Impact', sans-serif;
+        font-size: 3.5rem;
+        color: #ffeb3b;
+        text-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+        margin-top: 0.5rem;
+    }
+
+    .header-tagline {
+        font-family: 'Inter', sans-serif;
+        font-size: 1.6rem;
+        font-weight: 600;
+        color: white;
+        max-width: 900px;
+        margin-top: 1.5rem;
+        opacity: 0.95;
+    }
+
+    .assignment-card {
+        background: white;
+        border: 8px solid #000;
+        border-radius: 20px;
+        padding: 2.5rem;
+        margin: 2.5rem 0;
+        box-shadow: 10px 10px 0 #000;
+        color: black;
+    }
+
+    .explosion-title {
+        font-family: 'Bangers', cursive;
+        font-size: 4.5rem;
+        color: #0d9488;
+        /* Teal */
+        text-align: center;
+        margin-bottom: 1.5rem;
+        text-shadow: 0 0 15px rgba(13, 148, 136, 0.4);
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 2rem 0;
+        font-size: 1.2rem;
+        background: white;
+        border: 6px solid black;
+        border-radius: 16px;
+        overflow: hidden;
+    }
+
+    th,
+    td {
+        border: 3px solid black;
+        padding: 1.2rem;
+        text-align: left;
+        color: black;
+    }
+
+    th {
+        background: #0d9488;
+        /* Teal */
+        color: #ffff;
+        font-size: 1.4rem;
+        text-align: center;
+    }
+
+    .bubble-fact {
+        background: #0d9488;
+        /* Teal bubble */
+        border: 8px solid black;
+        border-radius: 50px / 60px;
+        padding: 2.5rem;
+        margin: 3rem auto;
+        max-width: 1100px;
+        box-shadow: 10px 10px 0 black;
+        position: relative;
+        font-size: 1.6rem;
+        font-weight: bold;
+        text-align: center;
+        color: white;
+    }
+
+    .bubble-fact::before,
+    .bubble-fact::after {
+        content: '';
+        position: absolute;
+        background: #0d9488;
+        border: 8px solid black;
+    }
+
+    .bubble-fact::before {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        bottom: -50px;
+        left: 12%;
+    }
+
+    .bubble-fact::after {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        bottom: -32px;
+        left: 22%;
+    }
+
+    footer {
+        text-align: center;
+        padding: 5rem 2rem;
+        color: #ccc;
+        font-size: 1.4rem;
+        border-top: 10px double #0d9488;
+        margin-top: 6rem;
+    }
+
+    #fullscreen-btn {
+        position: fixed;
+        top: 1.5rem;
+        right: 1.5rem;
+        z-index: 9999;
+        background: rgba(255, 255, 255, 0.25);
+        border: none;
+        border-radius: 50%;
+        padding: 1.2rem;
+        cursor: pointer;
+        transition: all 0.3s;
+    }
+
+    #fullscreen-btn:hover {
+        background: rgba(13, 148, 136, 0.7);
+        transform: scale(1.2) rotate(8deg);
+    }
+
+    /* Responsive Overrides */
+    @media (max-width: 1024px) {
+        .project-title { font-size: 5rem; }
+        .project-subtitle { font-size: 2.8rem; }
+        .explosion-title { font-size: 3.5rem; }
+    }
+
+    @media (max-width: 768px) {
+        .project-header { height: auto; min-height: 300px; padding: 3rem 0; }
+        .header-overlay { padding: 1rem; }
+        .project-title { font-size: 3.5rem; }
+        .project-subtitle { font-size: 2rem; }
+        .header-tagline { font-size: 1.2rem; }
+        .assignment-card { padding: 1.5rem; margin: 1.5rem 0; border-width: 4px; }
+        .explosion-title { font-size: 2.5rem; }
+        .bubble-fact { padding: 1.5rem; font-size: 1.2rem; border-width: 4px; margin: 2rem auto; }
+        .bubble-fact::before, .bubble-fact::after { display: none; } /* Hide bubble tails on mobile for cleaner look */
+        
+        /* Override inline styles */
+        .project-title span, .project-subtitle span, .header-tagline span, 
+        .explosion-title span, .assignment-card span, .bubble-fact span {
+            font-size: inherit !important;
+        }
+
+        .table-responsive { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 1rem -0.5rem; }
+        table { min-width: 600px; font-size: 1rem; }
+    }
+
+    @media (max-width: 480px) {
+        .project-title { font-size: 2.5rem; }
+        .project-subtitle { font-size: 1.5rem; }
+        .explosion-title { font-size: 1.8rem; }
+        .assignment-card { padding: 1rem; border-radius: 12px; }
+    }
+</style>
+<!-- Fullscreen Button -->
+<p><button aria-label="Toggle Fullscreen" id="fullscreen-btn"><img alt="Enter Fullscreen" class="w-12 h-12"
+            id="enter-fs-icon" src="https://login.skillizee.io/s/articles/6971c474348e12598d489e16/images/fullscreen.png" /> <img
+            alt="Exit Fullscreen" class="w-12 h-12 hidden" id="exit-fs-icon"
+            src="https://login.skillizee.io/s/articles/6971c474348e12598d489e16/images/exit.png" /></button></p>
+
+<div class="crazy-wrapper"><!-- Clean & Premium Header (same as Project A) -->
+    <div class="project-header">
+        <div class="header-bg">&nbsp;</div>
+
+        <div class="header-overlay">
+            <h1 class="project-title"><span style="font-size:72px;">PROJECT B</span></h1>
+
+            <div class="project-subtitle"><span style="font-size:48px;">15&ndash;30 SECOND AD SCRIPT &amp; PITCH</span>
+            </div>
+
+            <p class="header-tagline"><span style="font-size:26px;">Write &amp; perform a short video-style ad, then
+                    pitch it like a pro with moodboard + style guide!</span></p>
+        </div>
+    </div>
+    <!-- Main Assignment Intro – Heading now black -->
+
+    <div class="bubble-fact mx-auto max-w-5xl">
+        <h2 class="explosion-title" style="color: #000000; -webkit-text-stroke: 1px black;"><span
+                style="font-size:28px;">YOUR MISSION &ndash; CREATE A HERO</span> <span
+                style="font-size:28px;">AD!</span></h2>
+
+        <p class="text-2xl leading-relaxed text-white"><span style="font-size:18px;">Write &amp; perform a short
+                15&ndash;30 second video-style ad.<br />
+                Then pitch it like a pro to your &ldquo;client&rdquo; (class/teacher) with moodboard + style
+                guide!</span></p>
+    </div>
+    <!-- Basic Format -->
+
+    <div class="assignment-card">
+        <h2 class="explosion-title"><span style="font-size:28px;">BASIC FORMAT (TIMING GUIDE)</span></h2>
+
+        <div class="grid md:grid-cols-4 gap-6 text-xl text-black">
+            <div class="bg-teal-100 p-8 rounded-xl border-6 border-black text-center font-bold"><span
+                    style="font-size:18px;">0&ndash;5 sec</span><br />
+                <span style="font-size:16px;"><span class="text-1xl">SHOW THE PROBLEM</span></span>
+            </div>
+
+            <div class="bg-teal-100 p-8 rounded-xl border-6 border-black text-center font-bold"><span
+                    style="font-size:18px;">5&ndash;15 sec</span><br />
+                <span style="font-size:16px;"><span class="text-1xl">INTRODUCE PRODUCT</span></span>
+            </div>
+
+            <div class="bg-teal-100 p-8 rounded-xl border-6 border-black text-center font-bold"><span
+                    style="font-size:18px;">15&ndash;25 sec</span><br />
+                <span style="font-size:16px;"><span class="text-1xl">SHOW BENEFITS</span></span>
+            </div>
+
+            <div class="bg-teal-100 p-8 rounded-xl border-6 border-black text-center font-bold"><span
+                    style="font-size:18px;">Last 5 sec</span><br />
+                <span style="font-size:16px;"><span class="text-1xl">TAGLINE + BRAND NAME</span></span>
+            </div>
+        </div>
+
+        <p class="text-2xl text-center text-black mt-10 font-bold italic"><span style="font-size:18px;">Example
+                Flow:<br />
+                👩 &ldquo;Why do we throw so much plastic every day?&rdquo;<br />
+                👦 &ldquo;What if we could reuse instead?&rdquo;<br />
+                🎥 Show product<br />
+                🎙 &ldquo;Introducing ___ &mdash; the smart eco choice.&rdquo;<br />
+                🌍 &ldquo;Good for you. Better for Earth.&rdquo;</span></p>
+
+        <p class="text-center text-2xl font-bold mt-8 text-black"><span style="font-size:18px;">🎯 Evaluation Focus:
+                Message clarity + Engagement</span></p>
+    </div>
+    <!-- Client Pitch Presentation -->
+
+    <div class="assignment-card">
+        <h2 class="explosion-title"><span style="font-size:28px;">PREPARE YOUR CLIENT PITCH</span></h2>
+
+        <h2 class="explosion-title"><span style="font-size:36px;">PRESENTATION</span></h2>
+
+        <p class="text-2xl text-center text-black mb-8 font-bold"><span style="font-size:18px;">You are presenting to a
+                &ldquo;client&rdquo; (teacher/class). Make it 2&ndash;3 minutes and wow them!</span></p>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-teal-50 p-8 rounded-xl border-6 border-black">
+                <h3 class="text-2xl font-black text-teal-700 mb-4">1. MOODBOARD</h3>
+
+                <p class="text-xl text-black"><span style="font-size:18px;">A page showing your brand&rsquo;s visual
+                        vibe:</span></p>
+
+                <ul class="space-y-3 pl-6 list-disc mt-4 text-lg text-black">
+                    <li><span style="font-size:18px;">Colors</span></li>
+                    <li><span style="font-size:18px;">Nature images</span></li>
+                    <li><span style="font-size:18px;">Textures (jute, leaves, water, earth)</span></li>
+                    <li><span style="font-size:18px;">Words that describe the feeling (fresh, pure, hopeful,
+                            clean)</span></li>
+                </ul>
+            </div>
+
+            <div class="bg-teal-50 p-8 rounded-xl border-6 border-black">
+                <h3 class="text-2xl font-black text-teal-700 mb-4">2. STYLE GUIDE (Mini Version)</h3>
+
+                <p class="text-xl text-black"><span style="font-size:18px;">Explain your brand rules:</span></p>
+
+                <ul class="space-y-3 pl-6 list-disc mt-4 text-lg text-black">
+                    <li><span style="font-size:18px;">Brand colors (2&ndash;3 max)</span></li>
+                    <li><span style="font-size:18px;">Font style (bold, handwritten, modern, etc.)</span></li>
+                    <li><span style="font-size:18px;">Tone of voice (friendly, inspiring, earthy)</span></li>
+                </ul>
+            </div>
+
+            <div class="bg-teal-50 p-8 rounded-xl border-6 border-black">
+                <h3 class="text-2xl font-black text-teal-700 mb-4">3. VIDEO DEMO</h3>
+
+                <p class="text-xl text-black"><span style="font-size:18px;">Act out your ad OR show a recorded
+                        version.</span></p>
+
+                <p class="text-xl mt-6 text-black font-bold"><span style="font-size:18px;">Bring energy &mdash; make
+                        them feel your brand comes alive!</span></p>
+            </div>
+        </div>
+    </div>
+    <!-- What to Submit Table --><!-- What to Submit Table – with colored headers -->
+
+    <div class="assignment-card">
+        <h2 class="explosion-title"><span style="font-size:28px;">WHAT TO SUBMIT</span></h2>
+
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr
+                        style="background: linear-gradient(135deg, #0d9488, #14b8a6); color: #000000; text-shadow: 1px 1px 2px rgba(0,0,0,0.3);">
+                        <th
+                            style="font-size:1.5rem; padding:1.4rem; border: 4px solid #000; font-family: 'Bangers', cursive; letter-spacing: 1px;">
+                            Element</th>
+                        <th
+                            style="font-size:1.5rem; padding:1.4rem; border: 4px solid #000; font-family: 'Bangers', cursive; letter-spacing: 1px;">
+                            Deliverable</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Logo</strong></td>
+                        <td>Drawing/digital + variations</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Tagline</strong></td>
+                        <td>3&ndash;7 word emotional promise</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Jingle</strong></td>
+                        <td>30s audio or live performance</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Ad</strong></td>
+                        <td>Script + acted or recorded demo</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Moodboard</strong></td>
+                        <td>Visual theme sheet</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Style Guide</strong></td>
+                        <td>Colors, fonts, tone</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Pitch</strong></td>
+                        <td>2&ndash;3 min presentation</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <style type="text/css">
+        table thead th,
+        table thead td {
+            color: #ffffff;
+            text-transform: uppercase;
+            font-size: .65rem;
+            line-height: 1rem;
+            font-weight: 500;
+        }
+    </style>
+    <!-- Presentation Structure -->
+    <div class="assignment-card">
+        <h2 class="explosion-title"><span style="font-size:28px;">PRESENTATION STRUCTURE (2&ndash;3 Minutes)</span></h2>
+
+        <ol class="space-y-6 text-2xl pl-10 list-decimal text-black font-bold">
+            <li><span style="font-size:18px;">Introduce brand &amp; problem</span></li>
+            <li><span style="font-size:18px;">Show logo + explain meaning</span></li>
+            <li><span style="font-size:18px;">Say tagline</span></li>
+            <li><span style="font-size:18px;">Perform/play jingle</span></li>
+            <li><span style="font-size:18px;">Act or show ad</span></li>
+            <li><span style="font-size:18px;">Explain why your brand is good for the planet</span></li>
+        </ol>
+    </div>
+</div>
+<!-- Fullscreen Script -->
+<script>
+    const fsBtn = document.getElementById('fullscreen-btn');
+    const enterIcon = document.getElementById('enter-fs-icon');
+    const exitIcon = document.getElementById('exit-fs-icon');
+
+    fsBtn.addEventListener('click', () => {
+        if (!document.fullscreenElement) {
+            document.documentElement.requestFullscreen?.() ||
+                document.documentElement.webkitRequestFullscreen?.() ||
+                document.documentElement.msRequestFullscreen?.();
+            enterIcon.classList.add('hidden');
+            exitIcon.classList.remove('hidden');
+        } else {
+            document.exitFullscreen?.() ||
+                document.webkitExitFullscreen?.() ||
+                document.msExitFullscreen?.();
+            enterIcon.classList.remove('hidden');
+            exitIcon.classList.add('hidden');
+        }
+    });
+
+    document.addEventListener('fullscreenchange', () => {
+        if (document.fullscreenElement) {
+            enterIcon.classList.add('hidden');
+            exitIcon.classList.remove('hidden');
+        } else {
+            enterIcon.classList.remove('hidden');
+            exitIcon.classList.add('hidden');
+        }
+    });
+</script>
